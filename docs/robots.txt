@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://construprimer.com.br/sitemap.xml

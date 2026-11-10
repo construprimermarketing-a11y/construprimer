@@ -55,7 +55,7 @@ const seoMetadata = {
   },
 };
 
-const canonicalHome = document.head.querySelector('link[rel="canonical"]')?.href || "https://construprime-ybsupctp.manus.space/";
+const canonicalHome = document.head.querySelector('link[rel="canonical"]')?.href || new URL("./", window.location.href).href;
 const canonicalBase = new URL("./", canonicalHome);
 const socialImage = new URL(socialImagePath, canonicalBase).href;
 const siteBasePath = canonicalBase.pathname;

@@ -1,9 +1,29 @@
-# Fontes oficiais — GitHub Pages
+# GitHub Pages — Construprimer
 
-- **Repositórios e visibilidade.** Em contas GitHub Free pessoais ou de organizações, o repositório-fonte precisa ser público; sites Pages podem ser acessíveis publicamente a partir de repositórios privados quando plano/configuração da conta permite. O site Pages é público mesmo quando o repositório-fonte pode permanecer privado. Fonte: https://docs.github.com/articles/creating-project-pages-manually
-- **Tipos de site e caminhos.** Um site Pages de projeto, ao contrário de um site de conta, tem URL padrão na forma `https://<owner>.github.io/<repositoryname>`. A publicação serve arquivos estáticos HTML, CSS e JavaScript. Fonte: https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages
-- **Fontes de publicação.** A documentação do GitHub descreve implantação por branch (raiz ou pasta `/docs`) e também por GitHub Actions. Fonte: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
-- **Limitação específica deste projeto.** A documentação WebDev que governa o repositório canônico gerenciado registra que GitHub Actions não está disponível nesta configuração. Portanto, não incluir workflow de Actions nem afirmar que um deploy automatizado desse modo vai funcionar; a opção a avaliar após confirmação é publicar os arquivos estáticos gerados a partir do branch `/docs`.
-- **Domínio e DNS.** Configurar o domínio primeiro nas configurações Pages do repositório e depois no provedor DNS; registrar o domínio antes de configurar o DNS ajuda a evitar takeover. Mudanças DNS podem levar até 24 horas. Para domínio raiz, GitHub documenta ALIAS/ANAME ou A para `185.199.108.153`, `185.199.109.153`, `185.199.110.153` e `185.199.111.153`. Para `www`, usar CNAME apontando ao domínio padrão da conta, sem nome do repositório. Ativar HTTPS após a propagação e quando a opção estiver disponível. Fonte: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
+Referências oficiais consultadas em 10/11/2026 para a configuração do domínio próprio.
 
-O domínio real do titular, seu provedor DNS e a elegibilidade do repositório privado ainda não foram confirmados. Não aplicar DNS nem tornar o repositório público com base nestas referências.
+## Decisões e estado verificado
+
+- O repositório `construprimermarketing-a11y/construprimer` está público. O site publicado pelo GitHub Pages também será público.
+- O domínio informado pelo titular é `construprimer.com.br`. O RDAP do Registro.br o retornou como ativo, com nameservers `a.auto.dns.br` e `b.auto.dns.br`.
+- No momento da consulta, não foram resolvidos registros A, AAAA ou CNAME para o domínio raiz nem para `www`. A resolução DNS precisa ser configurada no provedor do domínio, aparentemente Registro.br; não há acesso à conta DNS neste ambiente.
+- A saída estática é gerada de `public/` para `docs/` por `python3 scripts/generate_seo_pages.py --site-base-url https://construprimer.com.br --output-dir docs`. A publicação prevista é pela branch `main`, pasta `/docs`, sem workflow personalizado.
+- As canonicals, o sitemap e o `robots.txt` da saída Pages usam `https://construprimer.com.br/`. A pasta contém `CNAME` com `construprimer.com.br` e `.nojekyll`.
+
+## Registros DNS necessários
+
+Para o domínio raiz (`@`), criar registros A para os endereços documentados pelo GitHub Pages:
+
+- `185.199.108.153`
+- `185.199.109.153`
+- `185.199.110.153`
+- `185.199.111.153`
+
+Opcionalmente, os registros AAAA para IPv6 são `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153` e `2606:50c0:8003::153`. Para `www`, criar CNAME apontando diretamente a `construprimermarketing-a11y.github.io`, sem nome do repositório. Não usar registros DNS wildcard. Depois da propagação, verificar o domínio e ativar HTTPS nas configurações Pages; o GitHub informa que a opção de HTTPS pode levar até 24 horas para ficar disponível.
+
+## Referências
+
+- [Configuring a publishing source for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+- [Managing a custom domain for your GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+- [GitHub REST API endpoints for Pages](https://docs.github.com/rest/pages/pages)
+- [Registro.br RDAP — construprimer.com.br](https://rdap.registro.br/domain/construprimer.com.br)

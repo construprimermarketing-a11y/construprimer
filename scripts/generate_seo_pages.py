@@ -3,6 +3,7 @@ from html import escape
 from pathlib import Path
 import argparse
 import re
+import shutil
 from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
 
@@ -192,7 +193,7 @@ def build_page(slug: str, page: dict, home_document: str, site_base_url: str) ->
     return replace_once(re.escape(START) + r".*?" + re.escape(END), START + "\n" + content + "\n" + END, document)
 
 
-def write_sitemap(site_base_url: str) -> None:
+def write_sitemap(site_base_url: str, output_dir: Path) -> None:
     namespace = "http://www.sitemaps.org/schemas/sitemap/0.9"
     ET.register_namespace("", namespace)
     urlset = ET.Element(f"{{{namespace}}}urlset")
@@ -204,27 +205,48 @@ def write_sitemap(site_base_url: str) -> None:
         ET.SubElement(url, f"{{{namespace}}}changefreq").text = "monthly"
         ET.SubElement(url, f"{{{namespace}}}priority").text = PRIORITIES[slug]
     xml = ET.tostring(urlset, encoding="unicode", xml_declaration=False)
-    (PUBLIC / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n{xml}\n', encoding="utf-8")
+    (output_dir / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n{xml}\n', encoding="utf-8")
+
+
+def clean_document(document: str) -> str:
+    return "\n".join(line.rstrip() for line in document.splitlines()) + "\n"
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate Construprimer SEO pages for a public site origin.")
     parser.add_argument("--site-base-url", default=DEFAULT_SITE_BASE_URL, help="HTTPS site base URL, with or without a trailing slash")
+    parser.add_argument("--output-dir", type=Path, default=PUBLIC, help="Output folder inside the repository; copies public assets when different from public/")
     args = parser.parse_args()
     site_base_url = normalize_site_base_url(args.site_base_url)
+    output_dir = args.output_dir.resolve()
+    if output_dir not in {PUBLIC.resolve(), (ROOT / "docs").resolve()}:
+        raise ValueError("The output directory must be public/ or docs/ in the project repository.")
+    if output_dir != PUBLIC.resolve():
+        preserved_files = {}
+        if output_dir.exists():
+            if not output_dir.is_dir():
+                raise ValueError("The output path must be a directory.")
+            for name in ("CNAME", ".nojekyll"):
+                path = output_dir / name
+                if path.is_file():
+                    preserved_files[name] = path.read_bytes()
+            shutil.rmtree(output_dir)
+        shutil.copytree(PUBLIC, output_dir)
+        for name, content in preserved_files.items():
+            (output_dir / name).write_bytes(content)
 
     home_document = update_home_metadata(site_base_url)
-    (PUBLIC / "index.html").write_text(home_document, encoding="utf-8")
+    (output_dir / "index.html").write_text(clean_document(home_document), encoding="utf-8")
     for slug, page in PAGES.items():
         document = build_page(slug, page, home_document, site_base_url)
-        (PUBLIC / f"{slug}.html").write_text(document, encoding="utf-8")
+        (output_dir / f"{slug}.html").write_text(clean_document(document), encoding="utf-8")
 
-    write_sitemap(site_base_url)
-    (PUBLIC / "robots.txt").write_text(
+    write_sitemap(site_base_url, output_dir)
+    (output_dir / "robots.txt").write_text(
         f"User-agent: *\nAllow: /\nSitemap: {site_base_url}sitemap.xml\n",
         encoding="utf-8",
     )
-    print(f"Generated {len(PAGES) + 1} SEO pages and gateway documents for {site_base_url}")
+    print(f"Generated {len(PAGES) + 1} SEO pages and gateway documents for {site_base_url} in {output_dir}")
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@
 
 Usar **Construprimer** como nome oficial em textos visíveis, títulos, metadados e dados estruturados, preservando os slugs técnicos, domínio e identificadores de repositório existentes. Inserir a imagem anexada pelo titular como retrato de Flávio, fundador e CEO, na página inicial e na página Fundador. Preservar o arquivo e sua composição sem gerar, substituir ou recortar o rosto.
 
-Manter a presença institucional profissional, sem métricas não comprovadas, projetos conceituais ou depoimentos fictícios. Não fabricar histórico, biografia, endereço, região, obras, credenciais ou avaliações. O domínio atual da Manus permanece inalterado; a ativação pendente do GitHub Pages continua bloqueada por domínio, DNS e política de privacidade do repositório.
+Manter a presença institucional profissional, sem métricas não comprovadas, projetos conceituais ou depoimentos fictícios. Não fabricar histórico, biografia, endereço, região, obras, credenciais ou avaliações. O domínio personalizado confirmado é `construprimer.com.br`; o repositório já é público. Preparar publicação estática pela branch `main`, pasta `/docs`, e manter o domínio Manus existente até os registros DNS do Registro.br apontarem para o GitHub Pages. A resolução DNS do domínio ainda não está configurada.
 
 ## Implementação
 
