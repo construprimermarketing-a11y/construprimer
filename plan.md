@@ -2,19 +2,25 @@
 
 ## Escopo
 
-Transformar o site já publicado em uma presença institucional profissional, removendo linguagem de “prévia”, “protótipo” e “conteúdo a confirmar”, métricas não comprovadas, projetos conceituais com nomes/localidades, depoimentos fictícios e contatos sociais/e-mail não confirmados. Preservar marca, navegação, páginas, categorias de serviço presentes na referência e o WhatsApp informado pelo usuário. Não fabricar histórico da empresa, biografia do fundador, endereço, área de atendimento, obras, credenciais ou avaliações. Até que a empresa forneça materiais reais, usar copy institucional concisa e imagens de arquitetura claramente editoriais, sem fingir que representam obras executadas; não exibir o retrato ilustrativo do fundador como retrato oficial.
+Manter a presença institucional profissional sem linguagem de prévia ou protótipo, métricas não comprovadas, projetos conceituais ou depoimentos fictícios. Preservar marca, páginas, serviços e WhatsApp informado pelo usuário. Não fabricar histórico, biografia, endereço, região, obras, credenciais ou avaliações; manter imagens editoriais sem fingir que representam projetos executados e não tratar retrato ilustrativo como foto oficial.
+
+Preparar os arquivos para futura publicação do repositório GitHub conectado pelo GitHub Pages. Não trocar o domínio da versão Manus atualmente pública nem expor o código-fonte sem autorização. O domínio personalizado, a ativação do Pages e a compatibilidade do plano/visibilidade do repositório privado dependem de informações e confirmação do titular.
 
 ## Implementação
 
-Manter o site estático atual, com HTML pré-gerado pelas oito rotas, canonicals no domínio público, metadados por página, manifest, sitemap, robots e navegação existente. Atualizar `public/js/content.js` e `public/js/app.js` para eliminar os dados fictícios e produzir seções institucionais úteis, serviços, processo, FAQ e CTA de WhatsApp. Reescrever `public/index.html` e `scripts/generate_seo_pages.py` para que o conteúdo inicial rastreável corresponda à interface renderizada. Ajustar estilos existentes em `public/css/styles.css` para as novas seções, mantendo responsividade, acessibilidade e identidade de arquitetura premium.
+Manter as oito páginas pré-geradas, metadados por rota, HTML inicial rastreável, navegação, manifest, sitemap e robots. Copiar o hero editorial hospedado no armazenamento Manus para `public/images/hero-architecture.webp`, usar a cópia local nas páginas e metadados sociais e manter logo, CSS e JavaScript no pacote. Tornar caminhos de assets e links compatíveis tanto com o caminho de projeto `/<repositório>/` do Pages quanto com um domínio personalizado na raiz. Parametrizar `scripts/generate_seo_pages.py` para gerar canonicals, links sociais, sitemap e robots usando a origem pública informada no build e rejeitar origens inválidas.
+
+Não criar nem executar workflow GitHub Actions: o contrato do repositório canônico gerenciado informa que Actions não está disponível nesta configuração. Depois de confirmados o domínio e a elegibilidade/privacidade do repositório, preparar o artefato estático com origem correta em uma pasta de publicação suportada, como `/docs`, e ativar Pages por publicação a partir do branch autorizado. A publicação do Pages pode acontecer em cada atualização dessa pasta; não será criada cópia publicável nem disparada antes da confirmação.
+
+O site permanece estático. O formulário já abre o WhatsApp com uma mensagem preenchida para o número fornecido; a pessoa revisa e envia pelo aplicativo. Não implementar envio invisível, armazenamento de leads ou backend sem seleção de um serviço oficial e configuração segura de credenciais. Não inserir Google Analytics nem Meta Pixel sem os IDs fornecidos; preferir carregar as tags somente após consentimento de análise.
 
 ## Estrutura e limites
 
-- `public/js/content.js`: catálogo de serviços, etapas e FAQ sem portfólio/depoimentos inventados.
-- `public/js/app.js`: componentes e oito páginas, menu responsivo, metadados client-side e formulário que abre WhatsApp com mensagem preenchida; envio apenas pelo usuário no aplicativo.
-- `public/index.html`: casca, SEO inicial da Home, dados estruturados factuais e fallback HTML.
-- `scripts/generate_seo_pages.py`: geração das sete páginas iniciais específicas por rota.
-- `public/css/styles.css`: identidade e responsividade do site.
-- `public/manus-routes.json`, `public/sitemap.xml`, `public/robots.txt`: manter alinhados às oito páginas canônicas.
+- `scripts/generate_seo_pages.py`: gerar páginas, canonicals, metadados por rota, sitemap e robots para a origem-base recebida no build.
+- `public/index.html` e `public/js/app.js`: conteúdo inicial, navegação e assets relativos, compatíveis com caminho de projeto ou domínio próprio.
+- `public/images/`: logotipo e cópia local do hero editorial, sem dependência do armazenamento Manus na hospedagem Pages.
+- `public/js/content.js` e `public/css/styles.css`: conteúdo institucional e interface responsiva existentes.
+- `public/manus-routes.json`: manter o manifest alinhado às oito páginas da versão Manus; ele não configura roteamento do GitHub Pages.
+- `docs/` (ainda não criada): futura cópia do artefato estático gerado para a publicação de branch `/docs`, somente depois de confirmados a origem e o direito de publicar.
 
-Não habilitar servidor/backend nem armazenamento de leads: o formulário continua iniciando WhatsApp, sem envio de e-mail, sem envio automático da mensagem e sem persistência dos dados no site. O site existente já foi publicado e tornado público; salvar esta atualização como novo checkpoint. A publicação da nova revisão só ocorre após pedido explícito do usuário. Dados reais indispensáveis para portfólio, perfil do Google e páginas adicionais serão solicitados ao titular.
+O GitHub Pages é hospedagem estática, sem backend para receber leads. O domínio precisa ser informado, e seus registros DNS devem ser apresentados ao titular para confirmação antes de qualquer alteração. A disponibilidade de site público a partir de repositório privado depende do plano/configuração da conta; não expor o repositório como atalho.

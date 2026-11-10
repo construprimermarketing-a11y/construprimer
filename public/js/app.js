@@ -11,8 +11,7 @@ const routes = {
   "/contato": { label: "Solicitar orçamento" },
 };
 
-const publicOrigin = "https://construprime-ybsupctp.manus.space";
-const socialImage = `${publicOrigin}/manus-storage/async-images/223mdYCp21U4fcCRXVPFBC/image-1.webp`;
+const socialImagePath = "./images/hero-architecture.webp";
 const seoMetadata = {
   "/": {
     title: "Construprime | Construção civil, reformas e gestão de obras",
@@ -56,18 +55,25 @@ const seoMetadata = {
   },
 };
 
-const requestedPath = window.location.pathname.replace(/\/$/, "") || "/";
+const canonicalHome = document.head.querySelector('link[rel="canonical"]')?.href || "https://construprime-ybsupctp.manus.space/";
+const canonicalBase = new URL("./", canonicalHome);
+const socialImage = new URL(socialImagePath, canonicalBase).href;
+const siteBasePath = canonicalBase.pathname;
+const currentPathname = window.location.pathname === siteBasePath.replace(/\/$/, "") ? siteBasePath : window.location.pathname;
+const routeRelativePath = currentPathname.startsWith(siteBasePath) ? currentPathname.slice(siteBasePath.length) : currentPathname.replace(/^\/+/, "");
+const normalizedRoute = routeRelativePath.replace(/\/+$/, "");
+const requestedPath = normalizedRoute ? `/${normalizedRoute}` : "/";
 const path = requestedPath.endsWith(".html") ? requestedPath.slice(0, -5) || "/" : requestedPath;
 const isKnownRoute = Object.prototype.hasOwnProperty.call(routes, path);
-const routeHref = (href) => (href === "/" ? "/" : `${href}.html`);
+const routeHref = (href) => (href === "/" ? "./" : `./${href.slice(1)}.html`);
 const routeLink = (href, label, className = "") => `<a class="${className}" href="${routeHref(href)}">${label}</a>`;
 const imageNote = `<span class="image-note"><span aria-hidden="true">◆</span> Imagem editorial de arquitetura</span>`;
 const whatsappNumber = "5511969435549";
 const formattedWhatsappNumber = "+55 (11) 96943-5549";
 
 function logo() {
-  return `<a class="brand" href="/" aria-label="Construprime — Início">
-    <img src="/images/construprime-logo.jpg" alt="" width="42" height="42">
+  return `<a class="brand" href="${routeHref("/")}" aria-label="Construprime — Início">
+    <img src="./images/construprime-logo.jpg" alt="" width="42" height="42">
     <span class="brand-copy"><strong>Construprime</strong><small>CONSTRUINDO COM PROPÓSITO</small></span>
   </a>`;
 }
@@ -105,7 +111,7 @@ function faqBlock() {
 
 function homePage() {
   return `<main id="conteudo">
-    <section class="hero"><img class="hero-image" src="/manus-storage/async-images/223mdYCp21U4fcCRXVPFBC/image-1.webp" alt="Imagem editorial de arquitetura contemporânea." fetchpriority="high"><div class="hero-shade"></div>
+    <section class="hero"><img class="hero-image" src="./images/hero-architecture.webp" alt="Imagem editorial de arquitetura contemporânea." fetchpriority="high"><div class="hero-shade"></div>
       <div class="hero-content"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>CONSTRUÇÃO COM PROPÓSITO</span><h1>Seu projeto merece uma base <em>extraordinária.</em></h1><p>Da primeira ideia à entrega, cada etapa da sua obra merece planejamento, cuidado e atenção aos detalhes.</p><div class="hero-actions">${routeLink("/contato", "Converse sobre sua obra <span aria-hidden='true'>↗</span>", "button button-primary")}${routeLink("/servicos", "Conheça os serviços <span aria-hidden='true'>↗</span>", "button button-outline-light")}</div><div class="hero-caption"><span>Um parceiro para transformar planos em espaços reais — com clareza em cada etapa.</span><span><b>Construprime</b><br>Construindo com propósito.</span></div></div>
       <div class="hero-bottom"><span>↓ &nbsp; CONHEÇA A CONSTRUPRIME</span><span>CONSTRUÇÃO · REFORMAS · GESTÃO DE OBRAS</span></div>${imageNote}</section>
     <section class="intro-section section"><div class="section-inner intro-layout"><div class="intro-title"><span class="eyebrow"><span class="eyebrow-line"></span>QUEM SOMOS</span><h2>Construir é mais do que <em>erguer paredes.</em></h2>${routeLink("/empresa", "Conheça a empresa <span aria-hidden='true'>↗</span>", "text-link")}</div><div class="intro-copy"><p><strong>A Construprime atua em construção civil, reformas e transformação de espaços.</strong> Cada obra começa com uma conversa sobre necessidades, prioridades e objetivos.</p><p>Planejamento, clareza e atenção às etapas orientam o diálogo com cada cliente — da definição do escopo aos próximos passos.</p><div class="company-pillars"><div><span>01</span><b>Planejamento</b><small>Entender o que a obra precisa.</small></div><div><span>02</span><b>Clareza</b><small>Alinhar escopo e prioridades.</small></div><div><span>03</span><b>Acompanhamento</b><small>Combinar etapas e responsabilidades.</small></div></div></div></div></section>
@@ -183,8 +189,7 @@ const pageSeo = seoMetadata[path] || {
   description: "A página solicitada não está disponível na Construprime.",
   keywords: "",
 };
-const canonicalPath = path === "/" ? "/" : `${path}.html`;
-const canonicalUrl = `${publicOrigin}${canonicalPath}`;
+const canonicalUrl = new URL(path === "/" ? "./" : `${path.slice(1)}.html`, canonicalBase).href;
 document.title = pageSeo.title;
 setMeta("name", "description", pageSeo.description);
 setMeta("name", "keywords", pageSeo.keywords);
