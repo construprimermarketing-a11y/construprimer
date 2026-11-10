@@ -400,3 +400,92 @@ img { max-width: 100%; display: block; }
   .project-brief-cta .button { width: 100%; }
   .company-promise { padding: 55px 20px; }
 }
+
+
+/* Retrato institucional fornecido pelo titular: preservar toda a composição e os logotipos. */
+.founder-portrait {
+  min-height: 0;
+  margin: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0d1726;
+}
+.founder-portrait::before,
+.founder-portrait::after,
+.founder-portrait > span,
+.founder-portrait small {
+  display: none;
+}
+.founder-portrait img {
+  position: static;
+  inset: auto;
+  width: min(100%, 430px);
+  height: auto;
+  max-height: none;
+  margin: auto;
+  object-fit: contain;
+}
+.founder-portrait figcaption {
+  position: static;
+  width: 100%;
+  padding: 10px 8px 2px;
+  color: rgba(255,255,255,.78);
+  background: transparent;
+  font-size: 9px;
+  line-height: 1.4;
+  letter-spacing: .08em;
+  text-align: center;
+}
+.founder-monogram {
+  min-height: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+.founder-monogram::before,
+.founder-monogram > span,
+.founder-monogram small {
+  display: none;
+}
+.founder-monogram img {
+  position: static;
+  inset: auto;
+  width: min(100%, 440px);
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+.founder-monogram figcaption {
+  position: static;
+  align-self: stretch;
+  padding: 12px 0 0;
+  color: var(--muted);
+  background: transparent;
+  font-size: 11px;
+  text-align: center;
+}
+.seo-founder-photo {
+  width: min(100%, 440px);
+  margin: 22px 0;
+}
+.seo-founder-photo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.seo-founder-photo figcaption {
+  padding-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+}
+@media (max-width: 560px) {
+  .founder-portrait { padding: 12px 20px; }
+  .founder-portrait img { width: min(100%, 360px); }
+  .founder-monogram { min-height: 0; }
+}

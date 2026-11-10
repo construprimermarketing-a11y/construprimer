@@ -33,5 +33,5 @@ class SiteHandler(SimpleHTTPRequestHandler):
 if __name__ == "__main__":
     port = int(__import__("os").environ.get("PORT", "3000"))
     server = ThreadingHTTPServer(("0.0.0.0", port), SiteHandler)
-    print(f"Construprime preview listening on 0.0.0.0:{port}", flush=True)
+    print(f"Construprimer preview listening on 0.0.0.0:{port}", flush=True)
     server.serve_forever()

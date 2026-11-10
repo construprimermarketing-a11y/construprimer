@@ -1,6 +1,6 @@
 # Fontes oficiais — SEO e presença local
 
-Referências consultadas em 10/11/2026 para a preparação da versão SEO da Construprime. A documentação pode ser atualizada pelo Google.
+Referências consultadas em 10/11/2026 para a preparação da versão SEO da Construprimer. A documentação pode ser atualizada pelo Google.
 
 - [Guia de SEO para a Pesquisa Google](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) — usar conteúdo útil e descritivo, títulos e links internos claros; o Google decide se e quando uma página é indexada.
 - [Dados estruturados LocalBusiness](https://developers.google.com/search/docs/appearance/structured-data/local-business) — marcar somente informações verdadeiras; endereço/área e demais propriedades dependem dos dados reais da empresa. A versão do site usa `Organization` e não declara um endereço local ainda não informado.
@@ -14,5 +14,5 @@ Referências consultadas em 10/11/2026 para a preparação da versão SEO da Con
 
 - Criar HTML inicial distinto para as oito páginas; manter metadata social e canonicals por página, links HTML estáticos, `sitemap.xml` e `robots.txt`.
 - Manter o perfil estruturado no nível `Organization`, sem `LocalBusiness`/endereço/área até a empresa confirmar presença e território de atuação.
-- A página publicada está com visibilidade `owner`; apenas uma versão pública e acessível a robôs pode ser descoberta pelo Google.
-- A fotografia referenciada na página original está rotulada como “Imagem ilustrativa de referência”; manter aviso no site e não usá-la como foto oficial da pessoa no Perfil do Google até confirmação.
+- O titular confirmou o nome comercial “Construprimer” e forneceu a fotografia de Flávio para a Home e a página Fundador. A imagem não foi gerada nem cortada; a mudança deste checkpoint ainda aguarda publicação no site público.
+- O site Manus já está público. A nova revisão com marca/foto está no Preview até que o titular autorize sua publicação.

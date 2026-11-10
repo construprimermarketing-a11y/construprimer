@@ -15,35 +15,36 @@ END = "      <!-- SEO_PAGE_CONTENT_END -->"
 
 PAGES = {
     "empresa": {
-        "title": "A Construprime | Construção com propósito",
-        "description": "Conheça a Construprime e sua atuação em construção civil, reformas, gestão de obras e acabamentos.",
-        "keywords": "Construprime, empresa de construção, construção civil, reformas",
+        "title": "A Construprimer | Construção com propósito",
+        "description": "Conheça a Construprimer e sua atuação em construção civil, reformas, gestão de obras e acabamentos.",
+        "keywords": "Construprimer, empresa de construção, construção civil, reformas",
         "heading": "Construir é mais do que erguer paredes.",
         "body": """
-<p><strong>A Construprime atua em construção civil, reformas e gestão de obras.</strong> O trabalho começa pela compreensão do local, dos objetivos e das prioridades de cada projeto.</p>
+<p><strong>A Construprimer atua em construção civil, reformas e gestão de obras.</strong> O trabalho começa pela compreensão do local, dos objetivos e das prioridades de cada projeto.</p>
 <h2>Clareza em cada etapa</h2>
 <p>Com o escopo alinhado, os próximos passos são conversados com clareza: serviços envolvidos, etapas, responsabilidades e acompanhamento.</p>
 <p>Da primeira ideia à entrega, cada etapa da obra merece planejamento, cuidado e atenção aos detalhes.</p>
 <p><a href="./servicos.html">Conheça os serviços</a> · <a href="./contato.html">Converse sobre sua obra</a></p>""",
     },
     "fundador": {
-        "title": "Flávio | Fundador da Construprime",
-        "description": "Conheça Flávio, fundador e CEO da Construprime, e converse sobre seu projeto de construção ou reforma.",
-        "keywords": "Flávio, fundador Construprime, construção civil, reformas",
+        "title": "Flávio | Fundador da Construprimer",
+        "description": "Conheça Flávio, fundador e CEO da Construprimer, e converse sobre seu projeto de construção ou reforma.",
+        "keywords": "Flávio, fundador Construprimer, construção civil, reformas",
         "heading": "Uma obra se faz com técnica. E também com presença.",
         "body": """
-<p>Flávio é fundador e CEO da Construprime.</p>
+<figure class="seo-founder-photo"><img src="./images/flavio.png" alt="Flávio, fundador e CEO da Construprimer." width="640" height="640" loading="lazy"><figcaption>Flávio · Fundador e CEO da Construprimer</figcaption></figure>
+<p>Flávio é fundador e CEO da Construprimer.</p>
 <h2>Uma conversa sobre seu projeto</h2>
 <p>Para apresentar sua obra, conte sobre o local, o objetivo e o momento do projeto. A equipe conversa sobre os próximos passos.</p>
-<p><a href="./contato.html">Fale com a Construprime pelo WhatsApp</a></p>""",
+<p><a href="./contato.html">Fale com a Construprimer pelo WhatsApp</a></p>""",
     },
     "servicos": {
-        "title": "Serviços de construção e reforma | Construprime",
-        "description": "Conheça as frentes da Construprime: construção civil, reformas e melhorias, gestão de obras gerais e acabamentos.",
-        "keywords": "construção civil, reformas, gestão de obras, acabamentos, Construprime",
+        "title": "Serviços de construção e reforma | Construprimer",
+        "description": "Conheça as frentes da Construprimer: construção civil, reformas e melhorias, gestão de obras gerais e acabamentos.",
+        "keywords": "construção civil, reformas, gestão de obras, acabamentos, Construprimer",
         "heading": "Para cada desafio, um jeito de construir.",
         "body": """
-<p>Conheça as frentes de atuação da Construprime e conte à equipe sobre o que você precisa. O escopo, as etapas e os próximos passos são conversados conforme as características de cada obra.</p>
+<p>Conheça as frentes de atuação da Construprimer e conte à equipe sobre o que você precisa. O escopo, as etapas e os próximos passos são conversados conforme as características de cada obra.</p>
 <h2>Construção civil</h2><p>Atenção ao escopo, às etapas e às decisões de cada projeto, do planejamento à entrega.</p>
 <h2>Reformas e melhorias</h2><p>Transformação de espaços existentes, considerando objetivos, prioridades e o uso cotidiano.</p>
 <h2>Gestão de obras gerais</h2><p>Organização das etapas, comunicação e acompanhamento definidos conforme o escopo da obra.</p>
@@ -51,21 +52,21 @@ PAGES = {
 <p><a href="./contato.html">Converse sobre sua obra</a></p>""",
     },
     "projetos": {
-        "title": "Converse sobre seu projeto | Construprime",
-        "description": "Organize as informações do seu projeto de construção ou reforma e converse com a Construprime pelo WhatsApp.",
-        "keywords": "projeto de construção, projeto de reforma, orçamento de obra, Construprime",
+        "title": "Converse sobre seu projeto | Construprimer",
+        "description": "Organize as informações do seu projeto de construção ou reforma e converse com a Construprimer pelo WhatsApp.",
+        "keywords": "projeto de construção, projeto de reforma, orçamento de obra, Construprimer",
         "heading": "Seu projeto tem um ponto de partida.",
         "body": """
 <p>Compartilhe as informações essenciais para iniciar uma conversa produtiva sobre a obra.</p>
 <h2>Objetivo</h2><p>Descreva o que pretende construir, reformar, melhorar ou concluir.</p>
 <h2>Local</h2><p>Informe cidade e bairro para dar contexto ao seu pedido.</p>
 <h2>Momento do projeto</h2><p>Conte se está iniciando o planejamento, se já possui projeto ou se a execução começou.</p>
-<p><a href="./contato.html">Apresente seu projeto à Construprime</a></p>""",
+<p><a href="./contato.html">Apresente seu projeto à Construprimer</a></p>""",
     },
     "processo": {
-        "title": "Como trabalhamos | Construprime",
-        "description": "Entenda as etapas de conversa, definição de escopo, proposta e acompanhamento de uma obra com a Construprime.",
-        "keywords": "processo de obra, gestão de obras, construção, acompanhamento, Construprime",
+        "title": "Como trabalhamos | Construprimer",
+        "description": "Entenda as etapas de conversa, definição de escopo, proposta e acompanhamento de uma obra com a Construprimer.",
+        "keywords": "processo de obra, gestão de obras, construção, acompanhamento, Construprimer",
         "heading": "Clareza do primeiro contato à execução.",
         "body": """
 <p>Conhecer a necessidade, alinhar as informações e combinar responsabilidades contribui para uma condução mais clara da obra. As etapas e o acompanhamento são definidos de acordo com o escopo.</p>
@@ -73,24 +74,24 @@ PAGES = {
 <p><a href="./contato.html">Converse sobre sua obra</a></p>""",
     },
     "manifesto": {
-        "title": "Construir com propósito | Construprime",
-        "description": "Planejamento, clareza e cuidado em cada etapa: conheça a visão da Construprime sobre construir com propósito.",
-        "keywords": "Construprime, construção com propósito, construção civil, planejamento de obra",
+        "title": "Construir com propósito | Construprimer",
+        "description": "Planejamento, clareza e cuidado em cada etapa: conheça a visão da Construprimer sobre construir com propósito.",
+        "keywords": "Construprimer, construção com propósito, construção civil, planejamento de obra",
         "heading": "Construir com propósito.",
         "body": """
 <p><strong>“Um parceiro para transformar planos em espaços reais — com clareza em cada etapa.”</strong></p>
 <p>Construir é fazer escolhas que impactam o espaço e a vida de quem vai usá-lo. Cada projeto merece atenção ao que importa: entender a necessidade, alinhar o escopo e conduzir a conversa com responsabilidade.</p>
-<p>É assim que a Construprime constrói com propósito.</p>
+<p>É assim que a Construprimer constrói com propósito.</p>
 <p><a href="./contato.html">Converse sobre sua obra</a></p>""",
     },
     "contato": {
-        "title": "Fale com a Construprime | Solicite um orçamento",
-        "description": "Fale com a Construprime pelo WhatsApp e conte sobre sua obra para conversar sobre os próximos passos.",
-        "keywords": "contato Construprime, orçamento de obra, construção civil, reformas",
+        "title": "Fale com a Construprimer | Solicite um orçamento",
+        "description": "Fale com a Construprimer pelo WhatsApp e conte sobre sua obra para conversar sobre os próximos passos.",
+        "keywords": "contato Construprimer, orçamento de obra, construção civil, reformas",
         "heading": "O próximo capítulo do seu espaço começa com uma boa conversa.",
         "body": """
 <p>Compartilhe o objetivo, a localização e o momento da obra para iniciar o diálogo sobre os próximos passos.</p>
-<h2>WhatsApp</h2><p>Fale com a Construprime pelo número <a href="https://wa.me/5511969435549">+55 (11) 96943-5549</a>. Você revisa e envia a mensagem pelo próprio aplicativo.</p>
+<h2>WhatsApp</h2><p>Fale com a Construprimer pelo número <a href="https://wa.me/5511969435549">+55 (11) 96943-5549</a>. Você revisa e envia a mensagem pelo próprio aplicativo.</p>
 <p><a href="https://wa.me/5511969435549">Iniciar conversa no WhatsApp</a></p>""",
     },
 }
@@ -186,7 +187,7 @@ def build_page(slug: str, page: dict, home_document: str, site_base_url: str) ->
     content = f'''      <main id="conteudo" class="seo-fallback">
         <h1>{escape(page["heading"])}</h1>
         {page["body"]}
-        <nav aria-label="Páginas da Construprime"><a href="./">Início</a> · <a href="./empresa.html">A empresa</a> · <a href="./fundador.html">Fundador</a> · <a href="./servicos.html">Serviços</a> · <a href="./projetos.html">Projetos</a> · <a href="./processo.html">Como trabalhamos</a> · <a href="./manifesto.html">Manifesto</a> · <a href="./contato.html">Solicitar orçamento</a></nav>
+        <nav aria-label="Páginas da Construprimer"><a href="./">Início</a> · <a href="./empresa.html">A empresa</a> · <a href="./fundador.html">Fundador</a> · <a href="./servicos.html">Serviços</a> · <a href="./projetos.html">Projetos</a> · <a href="./processo.html">Como trabalhamos</a> · <a href="./manifesto.html">Manifesto</a> · <a href="./contato.html">Solicitar orçamento</a></nav>
       </main>'''
     return replace_once(re.escape(START) + r".*?" + re.escape(END), START + "\n" + content + "\n" + END, document)
 
@@ -207,7 +208,7 @@ def write_sitemap(site_base_url: str) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate Construprime SEO pages for a public site origin.")
+    parser = argparse.ArgumentParser(description="Generate Construprimer SEO pages for a public site origin.")
     parser.add_argument("--site-base-url", default=DEFAULT_SITE_BASE_URL, help="HTTPS site base URL, with or without a trailing slash")
     args = parser.parse_args()
     site_base_url = normalize_site_base_url(args.site_base_url)

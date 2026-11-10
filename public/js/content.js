@@ -44,7 +44,7 @@ export const steps = [
 
 export const faqs = [
   {
-    question: "Quais serviços a Construprime oferece?",
+    question: "Quais serviços a Construprimer oferece?",
     answer: "Construção civil, reformas e melhorias, gestão de obras gerais e acabamentos. O escopo e a viabilidade são avaliados conforme as características de cada projeto.",
   },
   {
