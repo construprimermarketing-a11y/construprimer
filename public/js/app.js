@@ -11,9 +11,57 @@ const routes = {
   "/contato": { title: "O próximo capítulo do seu espaço começa com uma boa conversa.", label: "Solicitar orçamento" },
 };
 
-const path = window.location.pathname.replace(/\/$/, "") || "/";
+const publicOrigin = "https://construprime-ybsupctp.manus.space";
+const socialImage = `${publicOrigin}/manus-storage/async-images/223mdYCp21U4fcCRXVPFBC/image-1.webp`;
+const seoMetadata = {
+  "/": {
+    title: "Construprime | Construção, reformas e gestão de obras",
+    description: "Conheça a apresentação da Construprime sobre construção civil, reformas, gestão de obras e acabamentos. Conte seu projeto à equipe pelo WhatsApp.",
+    keywords: "Construprime, construção civil, reformas, gestão de obras, acabamentos",
+  },
+  "/empresa": {
+    title: "Sobre a Construprime | Construção e reformas",
+    description: "Saiba mais sobre a Construprime, sua proposta institucional e a apresentação de construção e transformação de espaços. Informações a confirmar pela empresa.",
+    keywords: "Construprime, empresa de construção, reformas, transformação de espaços",
+  },
+  "/fundador": {
+    title: "Flávio, fundador da Construprime | Nossa história",
+    description: "Conheça Flávio, apresentado pela Construprime como fundador e CEO. A biografia e os marcos da trajetória aguardam confirmação oficial.",
+    keywords: "Flávio, fundador Construprime, liderança, construção civil",
+  },
+  "/servicos": {
+    title: "Construção, reformas e gestão de obras | Construprime",
+    description: "Confira a apresentação provisória dos serviços da Construprime: construção civil, reformas e melhorias, gestão de obras gerais e acabamentos.",
+    keywords: "Construção civil, reformas, gestão de obras, acabamentos, Construprime",
+  },
+  "/projetos": {
+    title: "Projetos-conceito de construção | Construprime",
+    description: "Veja os projetos-conceito apresentados pela Construprime. Imagens e referências são ilustrativas e não representam obras ou clientes confirmados.",
+    keywords: "projetos-conceito, arquitetura, construção residencial, interiores, Construprime",
+  },
+  "/processo": {
+    title: "Como trabalhamos na construção | Construprime",
+    description: "Conheça as etapas apresentadas pela Construprime: entender a necessidade, definir o escopo, propor caminhos e executar com acompanhamento.",
+    keywords: "processo de obra, gestão de obras, construção, acompanhamento, Construprime",
+  },
+  "/manifesto": {
+    title: "Construir com propósito | Construprime",
+    description: "Leia o texto-base provisório da Construprime sobre clareza e propósito na construção, ainda aguardando validação pela empresa.",
+    keywords: "Construprime, construção com propósito, construção civil, clareza na obra",
+  },
+  "/contato": {
+    title: "Solicite um orçamento de obra | Construprime",
+    description: "Fale com a Construprime pelo WhatsApp e conte sobre sua obra para iniciar uma conversa de orçamento. Região e e-mail aguardam confirmação.",
+    keywords: "orçamento de obra, contato Construprime, construção civil, reformas",
+  },
+};
+
+const requestedPath = window.location.pathname.replace(/\/$/, "") || "/";
+const path = requestedPath.endsWith(".html") ? requestedPath.slice(0, -5) || "/" : requestedPath;
 const page = routes[path] || routes["/"];
-const routeLink = (href, label, className = "") => `<a class="${className}" href="${href}">${label}</a>`;
+const isKnownRoute = Object.prototype.hasOwnProperty.call(routes, path);
+const routeHref = (href) => (href === "/" ? "/" : `${href}.html`);
+const routeLink = (href, label, className = "") => `<a class="${className}" href="${routeHref(href)}">${label}</a>`;
 const imageNote = `<span class="image-note"><span aria-hidden="true">◆</span> Imagem ilustrativa · Projeto-conceito</span>`;
 const whatsappNumber = "5511969435549";
 const formattedWhatsappNumber = "+55 (11) 96943-5549";
@@ -49,7 +97,7 @@ function footer() {
 }
 
 function projectCards() {
-  return projects.map((project, index) => `<a class="project-card project-card-${index + 1}" href="/projetos" aria-label="${project.category}: ${project.title}, projeto-conceito em ${project.location}">
+  return projects.map((project, index) => `<a class="project-card project-card-${index + 1}" href="/projetos.html" aria-label="${project.category}: ${project.title}, projeto-conceito em ${project.location}">
     <div class="project-image"><img src="${project.image}" alt="${project.alt}" loading="lazy">${imageNote}<span class="project-arrow" aria-hidden="true">↗</span></div>
     <div class="project-meta"><span>${project.category}</span><span>Projeto-conceito · ${project.location}</span></div><h3>${project.title}</h3></a>`).join("");
 }
@@ -72,7 +120,7 @@ function homePage() {
       <div class="hero-content"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>19 ANOS DE MERCADO <span class="provisional-tag">A CONFIRMAR</span></span><h1>Seu projeto merece uma base <em>extraordinária.</em></h1><p>Da primeira ideia à entrega, cada etapa da sua obra merece planejamento, cuidado e atenção aos detalhes.</p><div class="hero-actions">${routeLink("/contato", "Converse sobre sua obra <span aria-hidden='true'>↗</span>", "button button-primary")}${routeLink("/servicos", "Conheça os serviços <span aria-hidden='true'>↗</span>", "button button-outline-light")}</div><div class="hero-caption"><span>Um parceiro para transformar planos em espaços reais — com clareza em cada etapa.</span><span><b>Construprime</b><br>Espaços pensados para durar.</span></div></div>
       <div class="hero-bottom"><span>↓ &nbsp; ROLE PARA EXPLORAR</span><span>CONSTRUÇÃO · REFORMAS · GESTÃO DE OBRAS</span></div>${imageNote}</section>
     <section class="intro-section section"><div class="section-inner intro-layout"><div class="intro-title"><span class="eyebrow"><span class="eyebrow-line"></span>QUEM SOMOS</span><h2>Construir é mais do que <em>erguer paredes.</em></h2>${routeLink("/empresa", "Conheça a empresa <span aria-hidden='true'>↗</span>", "text-link")}</div><div class="intro-copy"><p><strong>A Construprime é uma empresa dedicada à construção e transformação de espaços.</strong> Este protótipo traz uma base institucional que será ajustada à história, à equipe e à especialidade real da empresa.</p><p>Nosso compromisso proposto é trabalhar com comunicação transparente, organização e atenção aos detalhes — princípios que devem ser confirmados e personalizados junto à equipe.</p><div class="metrics"><div><b>19</b><span>ANOS DE MERCADO <i>· a confirmar</i></span></div><div><b>360°</b><span>VISÃO DA OBRA</span></div><div><b>01</b><span>PARCEIRO POR ETAPA</span></div><div><b>∞</b><span>POSSIBILIDADES</span></div></div></div></div></section>
-    <section class="founder-band"><div class="founder-portrait" aria-hidden="true"><span>F</span><small>FLÁVIO<br>FUNDADOR E CEO</small></div><div class="founder-copy"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>QUEM CONDUZ</span><h2>Uma obra se faz com técnica. <em>E também com presença.</em></h2><p><strong>Flávio, fundador e CEO da Construprime,</strong> está à frente da visão e do desenvolvimento da empresa. Esta apresentação será aprofundada com a trajetória do fundador, os valores que orientam o trabalho e os marcos dos 19 anos de mercado.</p>${routeLink("/fundador", "Conheça o fundador <span aria-hidden='true'>↗</span>", "text-link text-link-light")}</div></section>
+    <section class="founder-band"><div class="founder-portrait"><img src="/manus-storage/ceo-flavio_c5af9c99.jpg" alt="Imagem ilustrativa usada na referência para representar o fundador Flávio; confirmar antes de apresentá-la como foto oficial." width="640" height="640" loading="lazy"><span class="founder-image-caption">Imagem ilustrativa de referência · confirmar com a Construprime</span><small>FLÁVIO<br>FUNDADOR E CEO</small></div><div class="founder-copy"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>QUEM CONDUZ</span><h2>Uma obra se faz com técnica. <em>E também com presença.</em></h2><p><strong>Flávio, fundador e CEO da Construprime,</strong> está à frente da visão e do desenvolvimento da empresa. Esta apresentação será aprofundada com a trajetória do fundador, os valores que orientam o trabalho e os marcos dos 19 anos de mercado.</p>${routeLink("/fundador", "Conheça o fundador <span aria-hidden='true'>↗</span>", "text-link text-link-light")}</div></section>
     <section class="services-section section section-cream"><div class="section-inner"><div class="section-heading"><div><span class="eyebrow">O QUE FAZEMOS</span><h2>Para cada desafio,<br><em>um jeito de construir.</em></h2></div><div class="section-heading-side"><p>Soluções organizadas para acompanhar o projeto com mais clareza, do primeiro desenho à entrega.</p>${routeLink("/servicos", "Ver todos os serviços ↗", "text-link")}</div></div><div class="service-grid">${serviceCards()}</div></div></section>
     <section class="projects-section section"><div class="section-inner"><div class="section-heading"><div><span class="eyebrow">PROJETOS</span><h2>Espaços que começam<br><em>antes da obra.</em></h2></div><div class="section-heading-side"><p>Uma seleção-conceito para mostrar como a Construprime pensa cada projeto como uma experiência completa.</p>${routeLink("/projetos", "Ver projetos ↗", "text-link")}</div></div><div class="project-grid">${projectCards()}</div></div></section>
     <section class="process-section section section-cream"><div class="section-inner process-layout"><div class="process-intro"><span class="eyebrow">COMO TRABALHAMOS</span><h2>Clareza do primeiro contato à execução.</h2><p>O processo é uma forma de cuidar do projeto. Por isso, cada etapa deixa claro o que está acontecendo e o que vem depois.</p>${routeLink("/processo", "Entenda nosso processo ↗", "text-link")}</div><div class="steps-list">${processSteps()}</div></div></section>
@@ -92,7 +140,7 @@ function companyPage() {
 
 function founderPage() {
   return `<main id="conteudo">${pageHero("Quem conduz", "Uma obra se faz com técnica. E também com presença.", "Flávio · fundador e CEO")}
-    <section class="section"><div class="section-inner founder-detail"><div class="founder-monogram"><span>F</span><small>FLÁVIO<br>FUNDADOR E CEO</small></div><div class="story-copy"><span class="eyebrow">FUNDADOR</span><h2>Flávio, fundador e CEO da Construprime,</h2><p>está à frente da visão e do desenvolvimento da empresa. Esta apresentação será aprofundada com a trajetória do fundador, os valores que orientam o trabalho e os marcos dos 19 anos de mercado.</p><p class="disclaimer">Biografia e marcos da trajetória precisam ser confirmados e complementados pela equipe. Não foram acrescentadas credenciais ou informações biográficas não disponíveis na referência.</p>${routeLink("/contato", "Converse sobre sua obra ↗", "text-link")}</div></div></section></main>`;
+    <section class="section"><div class="section-inner founder-detail"><figure class="founder-monogram"><img src="/manus-storage/ceo-flavio_c5af9c99.jpg" alt="Imagem ilustrativa usada na referência para representar o fundador Flávio; confirmar se é fotografia oficial." width="640" height="640" loading="lazy"><figcaption>Imagem ilustrativa de referência · confirmar antes de usar como retrato oficial</figcaption></figure><div class="story-copy"><span class="eyebrow">FUNDADOR</span><h2>Flávio, fundador e CEO da Construprime,</h2><p>está à frente da visão e do desenvolvimento da empresa. Esta apresentação será aprofundada com a trajetória do fundador, os valores que orientam o trabalho e os marcos dos 19 anos de mercado.</p><p class="disclaimer">Biografia e marcos da trajetória precisam ser confirmados e complementados pela equipe. Não foram acrescentadas credenciais ou informações biográficas não disponíveis na referência.</p>${routeLink("/contato", "Converse sobre sua obra ↗", "text-link")}</div></div></section></main>`;
 }
 
 function servicesPage() {
@@ -132,7 +180,43 @@ const pageContent = {
   "/contato": contactPage,
 };
 
-document.title = `${page.label} | Construprime — Construindo com propósito`;
+function setMeta(attribute, key, value) {
+  let element = document.head.querySelector(`meta[${attribute}="${key}"]`);
+  if (!element) {
+    element = document.createElement("meta");
+    element.setAttribute(attribute, key);
+    document.head.append(element);
+  }
+  element.content = value;
+}
+
+const pageSeo = seoMetadata[path] || {
+  title: "Página não encontrada | Construprime",
+  description: "A página solicitada não está disponível na Construprime.",
+  keywords: "",
+};
+const canonicalPath = path === "/" ? "/" : `${path}.html`;
+const canonicalUrl = `${publicOrigin}${canonicalPath}`;
+document.title = pageSeo.title;
+setMeta("name", "description", pageSeo.description);
+setMeta("name", "keywords", pageSeo.keywords);
+setMeta("name", "robots", isKnownRoute ? "index, follow, max-image-preview:large" : "noindex, follow");
+setMeta("property", "og:type", "website");
+setMeta("property", "og:site_name", "Construprime");
+setMeta("property", "og:title", pageSeo.title);
+setMeta("property", "og:description", pageSeo.description);
+setMeta("property", "og:url", canonicalUrl);
+setMeta("property", "og:image", socialImage);
+setMeta("property", "og:image:alt", "Imagem ilustrativa de arquitetura contemporânea da apresentação da Construprime");
+setMeta("name", "twitter:card", "summary_large_image");
+setMeta("name", "twitter:title", pageSeo.title);
+setMeta("name", "twitter:description", pageSeo.description);
+setMeta("name", "twitter:image", socialImage);
+const canonicalLink = document.head.querySelector('link[rel="canonical"]') || document.createElement("link");
+canonicalLink.rel = "canonical";
+canonicalLink.href = canonicalUrl;
+if (!canonicalLink.isConnected) document.head.append(canonicalLink);
+
 document.querySelector("#app").innerHTML = `${siteHeader()}${(pageContent[path] || homePage)()}${footer()}`;
 
 const menuToggle = document.querySelector(".menu-toggle");
