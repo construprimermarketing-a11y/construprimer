@@ -15,6 +15,8 @@ const path = window.location.pathname.replace(/\/$/, "") || "/";
 const page = routes[path] || routes["/"];
 const routeLink = (href, label, className = "") => `<a class="${className}" href="${href}">${label}</a>`;
 const imageNote = `<span class="image-note"><span aria-hidden="true">◆</span> Imagem ilustrativa · Projeto-conceito</span>`;
+const whatsappNumber = "5511969435549";
+const formattedWhatsappNumber = "+55 (11) 96943-5549";
 
 function logo() {
   return `<a class="brand" href="/" aria-label="Construprime — Início">
@@ -26,7 +28,7 @@ function logo() {
 function siteHeader() {
   const links = navItems.map((item) => routeLink(item.href, item.label, path === item.href ? "nav-link is-current" : "nav-link")).join("");
   return `<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <div class="notice-bar">PRÉVIA PARA APRESENTAÇÃO <span>•</span> Conteúdo, imagens e contatos precisam ser confirmados pela Construprime antes da publicação.</div>
+    <div class="notice-bar">PRÉVIA PARA APRESENTAÇÃO <span>•</span> Conteúdo, imagens e demais contatos precisam ser confirmados pela Construprime antes da publicação.</div>
     <div class="trust-bar"><span><b>19 anos de mercado</b> · Construção · Reformas · Gestão de obras</span><span>Experiência que constrói confiança <i>· informação a confirmar</i></span></div>
     <header class="site-header"><div class="header-inner">${logo()}
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
@@ -41,7 +43,7 @@ function footer() {
     <section class="closing-cta"><div class="closing-inner"><span class="eyebrow eyebrow-light">VAMOS CONVERSAR</span><h2>O próximo capítulo do seu espaço começa com uma boa conversa.</h2>${routeLink("/contato", "Solicitar um contato <span aria-hidden='true'>↗</span>", "button button-light")}</div><div class="closing-mark" aria-hidden="true">C<span>◆</span></div></section>
     <footer class="site-footer"><div class="footer-main"><div class="footer-brand">${logo()}<p>Um parceiro para transformar planos em espaços reais — com clareza em cada etapa.</p>${routeLink("/contato", "Converse sobre sua obra ↗", "footer-cta")}</div>
       <div class="footer-column"><span class="footer-title">EXPLORAR</span>${links}</div>
-      <div class="footer-column"><span class="footer-title">FALE COM A GENTE <small>· dados a confirmar</small></span><a href="tel:+5500000000000">(00) 00000-0000</a><a href="mailto:contato@construprime.com.br">contato@construprime.com.br</a><span>Região de atendimento a confirmar</span><span>Dados oficiais a confirmar</span></div>
+      <div class="footer-column"><span class="footer-title">FALE COM A GENTE <small>· e-mail e região a confirmar</small></span><a href="https://wa.me/${whatsappNumber}" target="_blank" rel="noopener noreferrer">WhatsApp · ${formattedWhatsappNumber}</a><a href="mailto:contato@construprime.com.br">contato@construprime.com.br</a><span>Região de atendimento a confirmar</span><span>Dados oficiais a confirmar</span></div>
       <div class="footer-column"><span class="footer-title">REDE E PARCEIROS</span><span>Instagram · link a confirmar</span><span>LinkedIn · link a confirmar</span><span class="footer-title footer-subtitle">CLIENTES · IDENTIFICAÇÕES PROVISÓRIAS</span><span>Cliente 01 · Cliente 02 · Cliente 03</span></div>
     </div><div class="footer-bottom"><span>© 2026 Construprime. Conteúdo institucional provisório.</span><span>Construído com propósito <b>◆</b></span></div></footer>`;
 }
@@ -115,8 +117,8 @@ function manifestoPage() {
 
 function contactPage() {
   return `<main id="conteudo">${pageHero("Vamos conversar", "O próximo capítulo do seu espaço começa com uma boa conversa.", "Conte um pouco sobre o que você quer construir e conversamos sobre o próximo passo.")}
-    <section class="section section-cream"><div class="section-inner contact-layout"><div class="contact-info"><span class="eyebrow">FALE COM A GENTE</span><h2>Comece por uma conversa.</h2><p>O primeiro contato serve para entender o momento da obra e indicar os próximos passos.</p><div class="contact-detail"><span>TELEFONE <i>· provisório</i></span><a href="tel:+5500000000000">(00) 00000-0000</a></div><div class="contact-detail"><span>E-MAIL <i>· a confirmar</i></span><a href="mailto:contato@construprime.com.br">contato@construprime.com.br</a></div><div class="contact-detail"><span>REGIÃO DE ATENDIMENTO</span><p>A confirmar</p></div><p class="disclaimer">Dados oficiais de contato e atendimento aguardam confirmação pela Construprime.</p></div>
-      <form class="contact-form" id="contact-form"><span class="eyebrow">SOLICITAR ORÇAMENTO</span><h2>Fale sobre sua obra.</h2><label>Seu nome<input name="name" autocomplete="name" required placeholder="Como podemos chamar você?"></label><label>Seu e-mail<input name="email" type="email" autocomplete="email" required placeholder="voce@exemplo.com"></label><label>Sobre o projeto<select name="project" required><option value="" selected disabled>Selecione uma opção</option><option>Construção civil</option><option>Reformas e melhorias</option><option>Gestão de obras gerais</option><option>Acabamentos</option><option>Outro / ainda estou entendendo</option></select></label><label>Conte um pouco mais<textarea name="message" rows="4" placeholder="O que você gostaria de construir ou transformar?"></textarea></label><button class="button button-primary" type="submit">Preparar solicitação <span aria-hidden="true">↗</span></button><p class="form-note" id="form-note">Este formulário abre um rascunho no seu aplicativo de e-mail. Não há envio ou armazenamento de dados neste site. O endereço de e-mail é provisório e deve ser confirmado.</p></form></div></section></main>`;
+    <section class="section section-cream"><div class="section-inner contact-layout"><div class="contact-info"><span class="eyebrow">FALE COM A GENTE</span><h2>Comece por uma conversa.</h2><p>O primeiro contato serve para entender o momento da obra e indicar os próximos passos.</p><div class="contact-detail"><span>WHATSAPP <i>· número informado</i></span><a href="https://wa.me/${whatsappNumber}" target="_blank" rel="noopener noreferrer">${formattedWhatsappNumber}</a></div><div class="contact-detail"><span>E-MAIL <i>· a confirmar</i></span><a href="mailto:contato@construprime.com.br">contato@construprime.com.br</a></div><div class="contact-detail"><span>REGIÃO DE ATENDIMENTO</span><p>A confirmar</p></div><p class="disclaimer">O número de WhatsApp foi informado para contato. E-mail e região de atendimento aguardam confirmação pela Construprime.</p></div>
+      <form class="contact-form" id="contact-form"><span class="eyebrow">SOLICITAR ORÇAMENTO</span><h2>Fale sobre sua obra.</h2><label>Seu nome<input name="name" autocomplete="name" required placeholder="Como podemos chamar você?"></label><label>Seu e-mail<input name="email" type="email" autocomplete="email" required placeholder="voce@exemplo.com"></label><label>Sobre o projeto<select name="project" required><option value="" selected disabled>Selecione uma opção</option><option>Construção civil</option><option>Reformas e melhorias</option><option>Gestão de obras gerais</option><option>Acabamentos</option><option>Outro / ainda estou entendendo</option></select></label><label>Conte um pouco mais<textarea name="message" rows="4" placeholder="O que você gostaria de construir ou transformar?"></textarea></label><button class="button button-primary" type="submit">Continuar no WhatsApp <span aria-hidden="true">↗</span></button><p class="form-note" id="form-note">Este formulário abre o WhatsApp com a mensagem preenchida. Confira os dados e toque em enviar no aplicativo. O site não envia mensagens automaticamente nem armazena seus dados.</p></form></div></section></main>`;
 }
 
 const pageContent = {
@@ -150,9 +152,17 @@ document.querySelector("#contact-form")?.addEventListener("submit", (event) => {
   event.preventDefault();
   const form = event.currentTarget;
   const data = new FormData(form);
-  const subject = encodeURIComponent(`Solicitação de orçamento · ${data.get("project")}`);
-  const body = encodeURIComponent(`Nome: ${data.get("name")}\nE-mail: ${data.get("email")}\nProjeto: ${data.get("project")}\n\nMensagem:\n${data.get("message") || "(não informado)"}`);
+  const message = [
+    "Olá! Gostaria de solicitar um orçamento com a Construprime.",
+    "",
+    `Nome: ${data.get("name")}`,
+    `E-mail: ${data.get("email")}`,
+    `Projeto: ${data.get("project")}`,
+    "",
+    `Mensagem: ${data.get("message") || "(não informado)"}`,
+  ].join("\n");
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   const notice = document.querySelector("#form-note");
-  if (notice) notice.textContent = "Seu aplicativo de e-mail será aberto com a mensagem preparada. Confira o endereço provisório antes de enviar.";
-  window.location.href = `mailto:contato@construprime.com.br?subject=${subject}&body=${body}`;
+  if (notice) notice.textContent = "O WhatsApp será aberto com a mensagem preenchida. Confira os dados e toque em enviar no aplicativo; nada é enviado automaticamente pelo site.";
+  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 });
