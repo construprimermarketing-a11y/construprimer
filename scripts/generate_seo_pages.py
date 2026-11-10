@@ -11,84 +11,82 @@ END = "      <!-- SEO_PAGE_CONTENT_END -->"
 
 PAGES = {
     "empresa": {
-        "title": "Sobre a Construprime | Construção e reformas",
-        "description": "Saiba mais sobre a Construprime, sua proposta institucional e a apresentação de construção e transformação de espaços. Informações a confirmar pela empresa.",
-        "keywords": "Construprime, empresa de construção, reformas, transformação de espaços",
+        "title": "A Construprime | Construção com propósito",
+        "description": "Conheça a Construprime e sua atuação em construção civil, reformas, gestão de obras e acabamentos.",
+        "keywords": "Construprime, empresa de construção, construção civil, reformas",
         "heading": "Construir é mais do que erguer paredes.",
         "body": """
-<p><strong>A Construprime é apresentada como uma empresa dedicada à construção e transformação de espaços.</strong> A história, a equipe, as especialidades e as informações institucionais ainda precisam ser confirmadas pela empresa.</p>
-<h2>Espaços pensados para durar</h2>
-<p>A proposta desta apresentação é organizar a conversa sobre construção, reformas e acompanhamento de projetos sem atribuir credenciais ou dados não confirmados.</p>
+<p><strong>A Construprime atua em construção civil, reformas e gestão de obras.</strong> O trabalho começa pela compreensão do local, dos objetivos e das prioridades de cada projeto.</p>
+<h2>Clareza em cada etapa</h2>
+<p>Com o escopo alinhado, os próximos passos são conversados com clareza: serviços envolvidos, etapas, responsabilidades e acompanhamento.</p>
 <p>Da primeira ideia à entrega, cada etapa da obra merece planejamento, cuidado e atenção aos detalhes.</p>
-<p><a href="/servicos.html">Conheça os serviços apresentados</a> · <a href="/contato.html">Fale com a Construprime</a></p>
-<p><small>Conteúdo institucional provisório, pendente de validação pela equipe da Construprime.</small></p>""",
+<p><a href="/servicos.html">Conheça os serviços</a> · <a href="/contato.html">Converse sobre sua obra</a></p>""",
     },
     "fundador": {
-        "title": "Flávio, fundador da Construprime | Nossa história",
-        "description": "Conheça Flávio, apresentado pela Construprime como fundador e CEO. A biografia e os marcos da trajetória aguardam confirmação oficial.",
-        "keywords": "Flávio, fundador Construprime, liderança, construção civil",
+        "title": "Flávio | Fundador da Construprime",
+        "description": "Conheça Flávio, fundador e CEO da Construprime, e converse sobre seu projeto de construção ou reforma.",
+        "keywords": "Flávio, fundador Construprime, construção civil, reformas",
         "heading": "Uma obra se faz com técnica. E também com presença.",
         "body": """
-<p>Flávio é apresentado como fundador e CEO da Construprime e está à frente da visão e do desenvolvimento da empresa. A biografia oficial, formação, trajetória e marcos de experiência aguardam confirmação.</p>
-<figure><img src="/manus-storage/ceo-flavio_c5af9c99.jpg" width="320" height="320" alt="Imagem ilustrativa usada na referência para representar o fundador Flávio; confirmar se é fotografia oficial."><figcaption>Imagem ilustrativa de referência · confirmar antes de usar como retrato oficial.</figcaption></figure>
-<h2>Uma história em construção</h2>
-<p>Esta página será aprofundada com a trajetória oficial do fundador e os valores que orientam o trabalho da Construprime. Não foram acrescentadas credenciais nem informações biográficas que não constam na referência.</p>
-<p><a href="/contato.html">Converse com a Construprime</a></p>""",
+<p>Flávio é fundador e CEO da Construprime.</p>
+<h2>Uma conversa sobre seu projeto</h2>
+<p>Para apresentar sua obra, conte sobre o local, o objetivo e o momento do projeto. A equipe conversa sobre os próximos passos.</p>
+<p><a href="/contato.html">Fale com a Construprime pelo WhatsApp</a></p>""",
     },
     "servicos": {
-        "title": "Construção, reformas e gestão de obras | Construprime",
-        "description": "Confira a apresentação provisória dos serviços da Construprime: construção civil, reformas e melhorias, gestão de obras gerais e acabamentos.",
-        "keywords": "Construção civil, reformas, gestão de obras, acabamentos, Construprime",
+        "title": "Serviços de construção e reforma | Construprime",
+        "description": "Conheça as frentes da Construprime: construção civil, reformas e melhorias, gestão de obras gerais e acabamentos.",
+        "keywords": "construção civil, reformas, gestão de obras, acabamentos, Construprime",
         "heading": "Para cada desafio, um jeito de construir.",
         "body": """
-<p>Soluções apresentadas para acompanhar projetos com clareza, do primeiro desenho à entrega. A disponibilidade, o escopo e a região de atendimento precisam ser confirmados pela Construprime.</p>
-<h2>Construção civil</h2><p>Do planejamento à entrega, construímos espaços com método, cuidado e visão de longo prazo. Escopo e especialidades a confirmar com a equipe.</p>
-<h2>Reformas e melhorias</h2><p>Transformamos ambientes existentes sem perder de vista a rotina, o orçamento e o resultado. Escopo e especialidades a confirmar com a equipe.</p>
-<h2>Gestão de obras gerais</h2><p>Mais clareza para decidir, mais organização para executar e mais tranquilidade para acompanhar. Escopo e especialidades a confirmar com a equipe.</p>
-<h2>Acabamentos</h2><p>A etapa que traduz o projeto em sensação, uso e durabilidade no dia a dia. Escopo e especialidades a confirmar com a equipe.</p>
+<p>Conheça as frentes de atuação da Construprime e conte à equipe sobre o que você precisa. O escopo, as etapas e os próximos passos são conversados conforme as características de cada obra.</p>
+<h2>Construção civil</h2><p>Atenção ao escopo, às etapas e às decisões de cada projeto, do planejamento à entrega.</p>
+<h2>Reformas e melhorias</h2><p>Transformação de espaços existentes, considerando objetivos, prioridades e o uso cotidiano.</p>
+<h2>Gestão de obras gerais</h2><p>Organização das etapas, comunicação e acompanhamento definidos conforme o escopo da obra.</p>
+<h2>Acabamentos</h2><p>Atenção às escolhas e às etapas finais que dão forma ao uso cotidiano dos espaços.</p>
 <p><a href="/contato.html">Converse sobre sua obra</a></p>""",
     },
     "projetos": {
-        "title": "Projetos-conceito de construção | Construprime",
-        "description": "Veja os projetos-conceito apresentados pela Construprime. Imagens e referências são ilustrativas e não representam obras ou clientes confirmados.",
-        "keywords": "projetos-conceito, arquitetura, construção residencial, interiores, Construprime",
-        "heading": "Espaços que começam antes da obra.",
+        "title": "Converse sobre seu projeto | Construprime",
+        "description": "Organize as informações do seu projeto de construção ou reforma e converse com a Construprime pelo WhatsApp.",
+        "keywords": "projeto de construção, projeto de reforma, orçamento de obra, Construprime",
+        "heading": "Seu projeto tem um ponto de partida.",
         "body": """
-<p>Uma seleção-conceito para apresentar como a Construprime pensa cada projeto como uma experiência completa. Estes exemplos não são portfólio confirmado.</p>
-<h2>Casa Horizonte</h2><p>Projeto-conceito residencial. Local apresentado na referência: São Paulo. A imagem é ilustrativa e não representa uma obra confirmada.</p>
-<h2>Apartamento Alto</h2><p>Projeto-conceito de interiores. Local apresentado na referência: Curitiba. A imagem é ilustrativa e não representa uma obra confirmada.</p>
-<h2>Casa Pátio</h2><p>Projeto-conceito de arquitetura. Local apresentado na referência: Campinas. A imagem é ilustrativa e não representa uma obra confirmada.</p>
-<p>Nomes, locais e imagens são conceituais e não identificam clientes ou trabalhos executados.</p>""",
+<p>Compartilhe as informações essenciais para iniciar uma conversa produtiva sobre a obra.</p>
+<h2>Objetivo</h2><p>Descreva o que pretende construir, reformar, melhorar ou concluir.</p>
+<h2>Local</h2><p>Informe cidade e bairro para dar contexto ao seu pedido.</p>
+<h2>Momento do projeto</h2><p>Conte se está iniciando o planejamento, se já possui projeto ou se a execução começou.</p>
+<p><a href="/contato.html">Apresente seu projeto à Construprime</a></p>""",
     },
     "processo": {
-        "title": "Como trabalhamos na construção | Construprime",
-        "description": "Conheça as etapas apresentadas pela Construprime: entender a necessidade, definir o escopo, propor caminhos e executar com acompanhamento.",
+        "title": "Como trabalhamos | Construprime",
+        "description": "Entenda as etapas de conversa, definição de escopo, proposta e acompanhamento de uma obra com a Construprime.",
         "keywords": "processo de obra, gestão de obras, construção, acompanhamento, Construprime",
         "heading": "Clareza do primeiro contato à execução.",
         "body": """
-<p>O processo é uma forma de cuidar do projeto. Cada etapa ajuda a deixar claro o que está acontecendo e o que vem depois. As responsabilidades e formas de acompanhamento devem ser ajustadas ao escopo real.</p>
-<ol><li><strong>Entender:</strong> conhecer sua necessidade, o local e o objetivo do projeto.</li><li><strong>Definir o escopo:</strong> alinhar serviços, prioridades e informações para avaliar a demanda.</li><li><strong>Propor caminhos:</strong> reunir informações, discutir os próximos passos e a proposta.</li><li><strong>Executar e acompanhar:</strong> combinar responsabilidades, etapas e formas de acompanhamento.</li></ol>
-<p><a href="/contato.html">Conte sobre seu projeto</a></p>""",
+<p>Conhecer a necessidade, alinhar as informações e combinar responsabilidades contribui para uma condução mais clara da obra. As etapas e o acompanhamento são definidos de acordo com o escopo.</p>
+<ol><li><strong>Entender:</strong> conhecer a necessidade, o local e o objetivo do projeto.</li><li><strong>Definir o escopo:</strong> alinhar serviços, prioridades e informações necessárias para avaliar a demanda.</li><li><strong>Propor caminhos:</strong> reunir informações e discutir os próximos passos e a proposta.</li><li><strong>Executar e acompanhar:</strong> combinar responsabilidades, etapas e formas de acompanhamento.</li></ol>
+<p><a href="/contato.html">Converse sobre sua obra</a></p>""",
     },
     "manifesto": {
         "title": "Construir com propósito | Construprime",
-        "description": "Leia o texto-base provisório da Construprime sobre clareza e propósito na construção, ainda aguardando validação pela empresa.",
-        "keywords": "Construprime, construção com propósito, construção civil, clareza na obra",
+        "description": "Planejamento, clareza e cuidado em cada etapa: conheça a visão da Construprime sobre construir com propósito.",
+        "keywords": "Construprime, construção com propósito, construção civil, planejamento de obra",
         "heading": "Construir com propósito.",
         "body": """
 <p><strong>“Um parceiro para transformar planos em espaços reais — com clareza em cada etapa.”</strong></p>
-<p>Este texto-base reaproveita a frase de apresentação da referência. Princípios, declarações e o manifesto institucional definitivo devem ser escritos e aprovados pela equipe da Construprime.</p>
+<p>Construir é fazer escolhas que impactam o espaço e a vida de quem vai usá-lo. Cada projeto merece atenção ao que importa: entender a necessidade, alinhar o escopo e conduzir a conversa com responsabilidade.</p>
+<p>É assim que a Construprime constrói com propósito.</p>
 <p><a href="/contato.html">Converse sobre sua obra</a></p>""",
     },
     "contato": {
-        "title": "Solicite um orçamento de obra | Construprime",
-        "description": "Fale com a Construprime pelo WhatsApp e conte sobre sua obra para iniciar uma conversa de orçamento. Região e e-mail aguardam confirmação.",
-        "keywords": "orçamento de obra, contato Construprime, construção civil, reformas",
+        "title": "Fale com a Construprime | Solicite um orçamento",
+        "description": "Fale com a Construprime pelo WhatsApp e conte sobre sua obra para conversar sobre os próximos passos.",
+        "keywords": "contato Construprime, orçamento de obra, construção civil, reformas",
         "heading": "O próximo capítulo do seu espaço começa com uma boa conversa.",
         "body": """
-<p>O primeiro contato serve para entender o momento da obra e indicar os próximos passos.</p>
-<h2>WhatsApp</h2><p>Fale com a Construprime pelo número informado: <a href="https://wa.me/5511969435549">+55 (11) 96943-5549</a>. O WhatsApp abrirá com a mensagem preenchida; confira os dados e envie pelo aplicativo se desejar.</p>
-<p>E-mail e região de atendimento aguardam confirmação oficial. O site não envia mensagens automaticamente nem armazena os dados do formulário.</p>
+<p>Compartilhe o objetivo, a localização e o momento da obra para iniciar o diálogo sobre os próximos passos.</p>
+<h2>WhatsApp</h2><p>Fale com a Construprime pelo número <a href="https://wa.me/5511969435549">+55 (11) 96943-5549</a>. Você revisa e envia a mensagem pelo próprio aplicativo.</p>
 <p><a href="https://wa.me/5511969435549">Iniciar conversa no WhatsApp</a></p>""",
     },
 }
@@ -124,4 +122,4 @@ for slug, page in PAGES.items():
     document = replace_once(re.escape(START) + r".*?" + re.escape(END), START + "\n" + content + "\n" + END, document)
     (PUBLIC / f"{slug}.html").write_text(document, encoding="utf-8")
 
-print(f"Generated {len(PAGES)} route-specific pages in {PUBLIC}")
+print(f"Generated {len(PAGES)} professional route-specific pages in {PUBLIC}")

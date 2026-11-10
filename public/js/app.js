@@ -1,68 +1,67 @@
-import { navItems, services, projects, steps, faqs, testimonials } from "./content.js";
+import { navItems, services, steps, faqs } from "./content.js";
 
 const routes = {
-  "/": { title: "Construindo com propósito", label: "Início" },
-  "/empresa": { title: "Construir é mais do que erguer paredes.", label: "A empresa" },
-  "/fundador": { title: "Uma obra se faz com técnica. E também com presença.", label: "Fundador" },
-  "/servicos": { title: "Para cada desafio, um jeito de construir.", label: "Serviços" },
-  "/projetos": { title: "Espaços que começam antes da obra.", label: "Projetos" },
-  "/processo": { title: "Clareza do primeiro contato à execução.", label: "Como trabalhamos" },
-  "/manifesto": { title: "Construir com propósito.", label: "Manifesto" },
-  "/contato": { title: "O próximo capítulo do seu espaço começa com uma boa conversa.", label: "Solicitar orçamento" },
+  "/": { label: "Início" },
+  "/empresa": { label: "A empresa" },
+  "/fundador": { label: "Fundador" },
+  "/servicos": { label: "Serviços" },
+  "/projetos": { label: "Projetos" },
+  "/processo": { label: "Como trabalhamos" },
+  "/manifesto": { label: "Manifesto" },
+  "/contato": { label: "Solicitar orçamento" },
 };
 
 const publicOrigin = "https://construprime-ybsupctp.manus.space";
 const socialImage = `${publicOrigin}/manus-storage/async-images/223mdYCp21U4fcCRXVPFBC/image-1.webp`;
 const seoMetadata = {
   "/": {
-    title: "Construprime | Construção, reformas e gestão de obras",
-    description: "Conheça a apresentação da Construprime sobre construção civil, reformas, gestão de obras e acabamentos. Conte seu projeto à equipe pelo WhatsApp.",
+    title: "Construprime | Construção civil, reformas e gestão de obras",
+    description: "Construção civil, reformas, gestão de obras e acabamentos. Apresente seu projeto à Construprime pelo WhatsApp.",
     keywords: "Construprime, construção civil, reformas, gestão de obras, acabamentos",
   },
   "/empresa": {
-    title: "Sobre a Construprime | Construção e reformas",
-    description: "Saiba mais sobre a Construprime, sua proposta institucional e a apresentação de construção e transformação de espaços. Informações a confirmar pela empresa.",
-    keywords: "Construprime, empresa de construção, reformas, transformação de espaços",
+    title: "A Construprime | Construção com propósito",
+    description: "Conheça a Construprime e sua atuação em construção civil, reformas, gestão de obras e acabamentos.",
+    keywords: "Construprime, empresa de construção, construção civil, reformas",
   },
   "/fundador": {
-    title: "Flávio, fundador da Construprime | Nossa história",
-    description: "Conheça Flávio, apresentado pela Construprime como fundador e CEO. A biografia e os marcos da trajetória aguardam confirmação oficial.",
-    keywords: "Flávio, fundador Construprime, liderança, construção civil",
+    title: "Flávio | Fundador da Construprime",
+    description: "Conheça Flávio, fundador e CEO da Construprime, e converse sobre seu projeto de construção ou reforma.",
+    keywords: "Flávio, fundador Construprime, construção civil, reformas",
   },
   "/servicos": {
-    title: "Construção, reformas e gestão de obras | Construprime",
-    description: "Confira a apresentação provisória dos serviços da Construprime: construção civil, reformas e melhorias, gestão de obras gerais e acabamentos.",
-    keywords: "Construção civil, reformas, gestão de obras, acabamentos, Construprime",
+    title: "Serviços de construção e reforma | Construprime",
+    description: "Conheça as frentes de atuação da Construprime: construção civil, reformas e melhorias, gestão de obras gerais e acabamentos.",
+    keywords: "construção civil, reformas, gestão de obras, acabamentos, Construprime",
   },
   "/projetos": {
-    title: "Projetos-conceito de construção | Construprime",
-    description: "Veja os projetos-conceito apresentados pela Construprime. Imagens e referências são ilustrativas e não representam obras ou clientes confirmados.",
-    keywords: "projetos-conceito, arquitetura, construção residencial, interiores, Construprime",
+    title: "Converse sobre seu projeto | Construprime",
+    description: "Organize as informações do seu projeto de construção ou reforma e converse com a Construprime pelo WhatsApp.",
+    keywords: "projeto de construção, projeto de reforma, orçamento de obra, Construprime",
   },
   "/processo": {
-    title: "Como trabalhamos na construção | Construprime",
-    description: "Conheça as etapas apresentadas pela Construprime: entender a necessidade, definir o escopo, propor caminhos e executar com acompanhamento.",
+    title: "Como trabalhamos | Construprime",
+    description: "Entenda as etapas de conversa, definição de escopo, proposta e acompanhamento de uma obra com a Construprime.",
     keywords: "processo de obra, gestão de obras, construção, acompanhamento, Construprime",
   },
   "/manifesto": {
     title: "Construir com propósito | Construprime",
-    description: "Leia o texto-base provisório da Construprime sobre clareza e propósito na construção, ainda aguardando validação pela empresa.",
-    keywords: "Construprime, construção com propósito, construção civil, clareza na obra",
+    description: "Planejamento, clareza e cuidado em cada etapa: conheça a visão da Construprime sobre construir com propósito.",
+    keywords: "Construprime, construção com propósito, construção civil, planejamento de obra",
   },
   "/contato": {
-    title: "Solicite um orçamento de obra | Construprime",
-    description: "Fale com a Construprime pelo WhatsApp e conte sobre sua obra para iniciar uma conversa de orçamento. Região e e-mail aguardam confirmação.",
-    keywords: "orçamento de obra, contato Construprime, construção civil, reformas",
+    title: "Fale com a Construprime | Solicite um orçamento",
+    description: "Fale com a Construprime pelo WhatsApp e conte sobre sua obra para conversar sobre os próximos passos.",
+    keywords: "contato Construprime, orçamento de obra, construção civil, reformas",
   },
 };
 
 const requestedPath = window.location.pathname.replace(/\/$/, "") || "/";
 const path = requestedPath.endsWith(".html") ? requestedPath.slice(0, -5) || "/" : requestedPath;
-const page = routes[path] || routes["/"];
 const isKnownRoute = Object.prototype.hasOwnProperty.call(routes, path);
 const routeHref = (href) => (href === "/" ? "/" : `${href}.html`);
 const routeLink = (href, label, className = "") => `<a class="${className}" href="${routeHref(href)}">${label}</a>`;
-const imageNote = `<span class="image-note"><span aria-hidden="true">◆</span> Imagem ilustrativa · Projeto-conceito</span>`;
+const imageNote = `<span class="image-note"><span aria-hidden="true">◆</span> Imagem editorial de arquitetura</span>`;
 const whatsappNumber = "5511969435549";
 const formattedWhatsappNumber = "+55 (11) 96943-5549";
 
@@ -76,8 +75,7 @@ function logo() {
 function siteHeader() {
   const links = navItems.map((item) => routeLink(item.href, item.label, path === item.href ? "nav-link is-current" : "nav-link")).join("");
   return `<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <div class="notice-bar">PRÉVIA PARA APRESENTAÇÃO <span>•</span> Conteúdo, imagens e demais contatos precisam ser confirmados pela Construprime antes da publicação.</div>
-    <div class="trust-bar"><span><b>19 anos de mercado</b> · Construção · Reformas · Gestão de obras</span><span>Experiência que constrói confiança <i>· informação a confirmar</i></span></div>
+    <div class="trust-bar"><span><b>CONSTRUÇÃO CIVIL</b> · REFORMAS · GESTÃO DE OBRAS · ACABAMENTOS</span><a href="https://wa.me/${whatsappNumber}" target="_blank" rel="noopener noreferrer">Atendimento pelo WhatsApp ↗</a></div>
     <header class="site-header"><div class="header-inner">${logo()}
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
       <nav class="main-nav" id="main-nav" aria-label="Navegação principal">${links}${routeLink("/contato", "Solicitar orçamento <span aria-hidden='true'>↗</span>", "button button-small nav-cta")}</nav>
@@ -86,20 +84,11 @@ function siteHeader() {
 
 function footer() {
   const links = navItems.filter((item) => item.href !== "/").map((item) => routeLink(item.href, item.label)).join("");
-  const quotes = testimonials.map((item) => `<blockquote class="quote-card"><span class="quote-mark" aria-hidden="true">“</span><p>${item.quote}</p><footer>${item.role}<small>Depoimento provisório · substituir por fala autorizada</small></footer></blockquote>`).join("");
-  return `<section class="testimonials section section-cream"><div class="section-inner"><div class="section-heading"><div><span class="eyebrow">QUEM CONSTRÓI COM A GENTE</span><h2>Confiança também se constrói.<span class="period">*</span></h2></div><p class="disclaimer">* Depoimentos provisórios para substituir pelas falas autorizadas de clientes e parceiros.</p></div><div class="quote-grid">${quotes}</div></div></section>
-    <section class="closing-cta"><div class="closing-inner"><span class="eyebrow eyebrow-light">VAMOS CONVERSAR</span><h2>O próximo capítulo do seu espaço começa com uma boa conversa.</h2>${routeLink("/contato", "Solicitar um contato <span aria-hidden='true'>↗</span>", "button button-light")}</div><div class="closing-mark" aria-hidden="true">C<span>◆</span></div></section>
-    <footer class="site-footer"><div class="footer-main"><div class="footer-brand">${logo()}<p>Um parceiro para transformar planos em espaços reais — com clareza em cada etapa.</p>${routeLink("/contato", "Converse sobre sua obra ↗", "footer-cta")}</div>
-      <div class="footer-column"><span class="footer-title">EXPLORAR</span>${links}</div>
-      <div class="footer-column"><span class="footer-title">FALE COM A GENTE <small>· e-mail e região a confirmar</small></span><a href="https://wa.me/${whatsappNumber}" target="_blank" rel="noopener noreferrer">WhatsApp · ${formattedWhatsappNumber}</a><a href="mailto:contato@construprime.com.br">contato@construprime.com.br</a><span>Região de atendimento a confirmar</span><span>Dados oficiais a confirmar</span></div>
-      <div class="footer-column"><span class="footer-title">REDE E PARCEIROS</span><span>Instagram · link a confirmar</span><span>LinkedIn · link a confirmar</span><span class="footer-title footer-subtitle">CLIENTES · IDENTIFICAÇÕES PROVISÓRIAS</span><span>Cliente 01 · Cliente 02 · Cliente 03</span></div>
-    </div><div class="footer-bottom"><span>© 2026 Construprime. Conteúdo institucional provisório.</span><span>Construído com propósito <b>◆</b></span></div></footer>`;
-}
-
-function projectCards() {
-  return projects.map((project, index) => `<a class="project-card project-card-${index + 1}" href="/projetos.html" aria-label="${project.category}: ${project.title}, projeto-conceito em ${project.location}">
-    <div class="project-image"><img src="${project.image}" alt="${project.alt}" loading="lazy">${imageNote}<span class="project-arrow" aria-hidden="true">↗</span></div>
-    <div class="project-meta"><span>${project.category}</span><span>Projeto-conceito · ${project.location}</span></div><h3>${project.title}</h3></a>`).join("");
+  return `<section class="closing-cta"><div class="closing-inner"><span class="eyebrow eyebrow-light">VAMOS CONVERSAR</span><h2>Conte sobre sua obra. Vamos conversar sobre o próximo passo.</h2>${routeLink("/contato", "Fale com a Construprime <span aria-hidden='true'>↗</span>", "button button-light")}</div><div class="closing-mark" aria-hidden="true">C<span>◆</span></div></section>
+    <footer class="site-footer"><div class="footer-main"><div class="footer-brand">${logo()}<p>Construção civil, reformas, gestão de obras e acabamentos.</p><a class="footer-cta" href="https://wa.me/${whatsappNumber}" target="_blank" rel="noopener noreferrer">Converse sobre sua obra ↗</a></div>
+      <div class="footer-column"><span class="footer-title">NAVEGAÇÃO</span>${links}</div>
+      <div class="footer-column"><span class="footer-title">CONTATO</span><a href="https://wa.me/${whatsappNumber}" target="_blank" rel="noopener noreferrer">WhatsApp · ${formattedWhatsappNumber}</a><span>Atendimento inicial pelo WhatsApp</span></div>
+    </div><div class="footer-bottom"><span>© 2026 Construprime</span><span>Construindo com propósito <b>◆</b></span></div></footer>`;
 }
 
 function serviceCards() {
@@ -111,62 +100,61 @@ function processSteps() {
 }
 
 function faqBlock() {
-  return `<section class="faq-section section"><div class="section-inner faq-layout"><div class="faq-intro"><span class="eyebrow">DÚVIDAS FREQUENTES</span><h2>Antes de começar.</h2><p>Se a sua pergunta não estiver aqui, conte o que você quer construir e conversamos sobre o próximo passo.</p>${routeLink("/contato", "Fale com a gente ↗", "text-link")}</div><div class="faq-list">${faqs.map((item, index) => `<details class="faq-item" ${index === 0 ? "" : ""}><summary>${item.question}<span aria-hidden="true">+</span></summary><p>${item.answer}</p></details>`).join("")}</div></div></section>`;
+  return `<section class="faq-section section"><div class="section-inner faq-layout"><div class="faq-intro"><span class="eyebrow">DÚVIDAS FREQUENTES</span><h2>Antes de começar.</h2><p>Conte o que você pretende construir ou transformar e converse diretamente com a Construprime.</p>${routeLink("/contato", "Fale com a equipe ↗", "text-link")}</div><div class="faq-list">${faqs.map((item) => `<details class="faq-item"><summary>${item.question}<span aria-hidden="true">+</span></summary><p>${item.answer}</p></details>`).join("")}</div></div></section>`;
 }
 
 function homePage() {
   return `<main id="conteudo">
-    <section class="hero"><img class="hero-image" src="/manus-storage/async-images/223mdYCp21U4fcCRXVPFBC/image-1.webp" alt="Imagem ilustrativa de arquitetura contemporânea em casa brasileira." fetchpriority="high"><div class="hero-shade"></div>
-      <div class="hero-content"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>19 ANOS DE MERCADO <span class="provisional-tag">A CONFIRMAR</span></span><h1>Seu projeto merece uma base <em>extraordinária.</em></h1><p>Da primeira ideia à entrega, cada etapa da sua obra merece planejamento, cuidado e atenção aos detalhes.</p><div class="hero-actions">${routeLink("/contato", "Converse sobre sua obra <span aria-hidden='true'>↗</span>", "button button-primary")}${routeLink("/servicos", "Conheça os serviços <span aria-hidden='true'>↗</span>", "button button-outline-light")}</div><div class="hero-caption"><span>Um parceiro para transformar planos em espaços reais — com clareza em cada etapa.</span><span><b>Construprime</b><br>Espaços pensados para durar.</span></div></div>
-      <div class="hero-bottom"><span>↓ &nbsp; ROLE PARA EXPLORAR</span><span>CONSTRUÇÃO · REFORMAS · GESTÃO DE OBRAS</span></div>${imageNote}</section>
-    <section class="intro-section section"><div class="section-inner intro-layout"><div class="intro-title"><span class="eyebrow"><span class="eyebrow-line"></span>QUEM SOMOS</span><h2>Construir é mais do que <em>erguer paredes.</em></h2>${routeLink("/empresa", "Conheça a empresa <span aria-hidden='true'>↗</span>", "text-link")}</div><div class="intro-copy"><p><strong>A Construprime é uma empresa dedicada à construção e transformação de espaços.</strong> Este protótipo traz uma base institucional que será ajustada à história, à equipe e à especialidade real da empresa.</p><p>Nosso compromisso proposto é trabalhar com comunicação transparente, organização e atenção aos detalhes — princípios que devem ser confirmados e personalizados junto à equipe.</p><div class="metrics"><div><b>19</b><span>ANOS DE MERCADO <i>· a confirmar</i></span></div><div><b>360°</b><span>VISÃO DA OBRA</span></div><div><b>01</b><span>PARCEIRO POR ETAPA</span></div><div><b>∞</b><span>POSSIBILIDADES</span></div></div></div></div></section>
-    <section class="founder-band"><div class="founder-portrait"><img src="/manus-storage/ceo-flavio_c5af9c99.jpg" alt="Imagem ilustrativa usada na referência para representar o fundador Flávio; confirmar antes de apresentá-la como foto oficial." width="640" height="640" loading="lazy"><span class="founder-image-caption">Imagem ilustrativa de referência · confirmar com a Construprime</span><small>FLÁVIO<br>FUNDADOR E CEO</small></div><div class="founder-copy"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>QUEM CONDUZ</span><h2>Uma obra se faz com técnica. <em>E também com presença.</em></h2><p><strong>Flávio, fundador e CEO da Construprime,</strong> está à frente da visão e do desenvolvimento da empresa. Esta apresentação será aprofundada com a trajetória do fundador, os valores que orientam o trabalho e os marcos dos 19 anos de mercado.</p>${routeLink("/fundador", "Conheça o fundador <span aria-hidden='true'>↗</span>", "text-link text-link-light")}</div></section>
-    <section class="services-section section section-cream"><div class="section-inner"><div class="section-heading"><div><span class="eyebrow">O QUE FAZEMOS</span><h2>Para cada desafio,<br><em>um jeito de construir.</em></h2></div><div class="section-heading-side"><p>Soluções organizadas para acompanhar o projeto com mais clareza, do primeiro desenho à entrega.</p>${routeLink("/servicos", "Ver todos os serviços ↗", "text-link")}</div></div><div class="service-grid">${serviceCards()}</div></div></section>
-    <section class="projects-section section"><div class="section-inner"><div class="section-heading"><div><span class="eyebrow">PROJETOS</span><h2>Espaços que começam<br><em>antes da obra.</em></h2></div><div class="section-heading-side"><p>Uma seleção-conceito para mostrar como a Construprime pensa cada projeto como uma experiência completa.</p>${routeLink("/projetos", "Ver projetos ↗", "text-link")}</div></div><div class="project-grid">${projectCards()}</div></div></section>
-    <section class="process-section section section-cream"><div class="section-inner process-layout"><div class="process-intro"><span class="eyebrow">COMO TRABALHAMOS</span><h2>Clareza do primeiro contato à execução.</h2><p>O processo é uma forma de cuidar do projeto. Por isso, cada etapa deixa claro o que está acontecendo e o que vem depois.</p>${routeLink("/processo", "Entenda nosso processo ↗", "text-link")}</div><div class="steps-list">${processSteps()}</div></div></section>
+    <section class="hero"><img class="hero-image" src="/manus-storage/async-images/223mdYCp21U4fcCRXVPFBC/image-1.webp" alt="Imagem editorial de arquitetura contemporânea." fetchpriority="high"><div class="hero-shade"></div>
+      <div class="hero-content"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>CONSTRUÇÃO COM PROPÓSITO</span><h1>Seu projeto merece uma base <em>extraordinária.</em></h1><p>Da primeira ideia à entrega, cada etapa da sua obra merece planejamento, cuidado e atenção aos detalhes.</p><div class="hero-actions">${routeLink("/contato", "Converse sobre sua obra <span aria-hidden='true'>↗</span>", "button button-primary")}${routeLink("/servicos", "Conheça os serviços <span aria-hidden='true'>↗</span>", "button button-outline-light")}</div><div class="hero-caption"><span>Um parceiro para transformar planos em espaços reais — com clareza em cada etapa.</span><span><b>Construprime</b><br>Construindo com propósito.</span></div></div>
+      <div class="hero-bottom"><span>↓ &nbsp; CONHEÇA A CONSTRUPRIME</span><span>CONSTRUÇÃO · REFORMAS · GESTÃO DE OBRAS</span></div>${imageNote}</section>
+    <section class="intro-section section"><div class="section-inner intro-layout"><div class="intro-title"><span class="eyebrow"><span class="eyebrow-line"></span>QUEM SOMOS</span><h2>Construir é mais do que <em>erguer paredes.</em></h2>${routeLink("/empresa", "Conheça a empresa <span aria-hidden='true'>↗</span>", "text-link")}</div><div class="intro-copy"><p><strong>A Construprime atua em construção civil, reformas e transformação de espaços.</strong> Cada obra começa com uma conversa sobre necessidades, prioridades e objetivos.</p><p>Planejamento, clareza e atenção às etapas orientam o diálogo com cada cliente — da definição do escopo aos próximos passos.</p><div class="company-pillars"><div><span>01</span><b>Planejamento</b><small>Entender o que a obra precisa.</small></div><div><span>02</span><b>Clareza</b><small>Alinhar escopo e prioridades.</small></div><div><span>03</span><b>Acompanhamento</b><small>Combinar etapas e responsabilidades.</small></div></div></div></div></section>
+    <section class="founder-band"><div class="founder-portrait"><span aria-hidden="true">F</span><small>FUNDADOR E CEO</small></div><div class="founder-copy"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>QUEM CONDUZ</span><h2>Uma obra se faz com técnica. <em>E também com presença.</em></h2><p><strong>Flávio é fundador e CEO da Construprime.</strong> Para apresentar seu projeto, conte sobre a obra e converse diretamente com a equipe.</p>${routeLink("/fundador", "Conheça o fundador <span aria-hidden='true'>↗</span>", "text-link text-link-light")}</div></section>
+    <section class="services-section section section-cream"><div class="section-inner"><div class="section-heading"><div><span class="eyebrow">O QUE FAZEMOS</span><h2>Para cada desafio,<br><em>um jeito de construir.</em></h2></div><div class="section-heading-side"><p>Construção, reformas, gestão e acabamentos: converse com a equipe para avaliar o escopo do seu projeto.</p>${routeLink("/servicos", "Ver serviços ↗", "text-link")}</div></div><div class="service-grid">${serviceCards()}</div></div></section>
+    <section class="projects-section section"><div class="section-inner"><div class="section-heading"><div><span class="eyebrow">SEU PROJETO</span><h2>Cada obra começa<br><em>com boas decisões.</em></h2></div><div class="section-heading-side"><p>Compartilhe o local, o objetivo e o tipo de serviço. Essas informações ajudam a iniciar uma conversa clara sobre os próximos passos.</p>${routeLink("/projetos", "Organize seu projeto ↗", "text-link")}</div></div><div class="project-start"><article><span>01</span><h3>O que você quer fazer?</h3><p>Construir, reformar, melhorar um ambiente, organizar uma obra ou concluir acabamentos.</p></article><article><span>02</span><h3>Onde será a obra?</h3><p>Informe a cidade e o bairro para contextualizar o projeto na conversa inicial.</p></article><article><span>03</span><h3>Em que etapa está?</h3><p>Conte se está planejando, se já possui projeto ou se a obra está em andamento.</p></article></div></div></section>
+    <section class="process-section section section-cream"><div class="section-inner process-layout"><div class="process-intro"><span class="eyebrow">COMO TRABALHAMOS</span><h2>Clareza do primeiro contato à execução.</h2><p>Conhecer o projeto, alinhar o escopo e combinar as etapas ajuda a orientar os próximos passos.</p>${routeLink("/processo", "Entenda nosso processo ↗", "text-link")}</div><div class="steps-list">${processSteps()}</div></div></section>
     ${faqBlock()}
   </main>`;
 }
 
 function pageHero(label, title, intro = "") {
-  return `<section class="page-hero"><div class="page-hero-inner"><span class="eyebrow"><span class="eyebrow-line"></span>${label.toUpperCase()}</span><h1>${title}</h1>${intro ? `<p>${intro}</p>` : ""}<div class="page-hero-meta"><span>CONSTRUPRIME · CONSTRUINDO COM PROPÓSITO</span><span>PRÉVIA · CONTEÚDO A CONFIRMAR</span></div></div></section>`;
+  return `<section class="page-hero"><div class="page-hero-inner"><span class="eyebrow"><span class="eyebrow-line"></span>${label.toUpperCase()}</span><h1>${title}</h1>${intro ? `<p>${intro}</p>` : ""}<div class="page-hero-meta"><span>CONSTRUPRIME · CONSTRUINDO COM PROPÓSITO</span><span>WHATSAPP · ${formattedWhatsappNumber}</span></div></div></section>`;
 }
 
 function companyPage() {
-  return `<main id="conteudo">${pageHero("Quem somos", "Construir é mais do que erguer paredes.", "Construção e transformação de espaços, com clareza em cada etapa.")}
-    <section class="section"><div class="section-inner inner-story"><div class="story-lead"><span class="eyebrow">A EMPRESA</span><h2>Espaços pensados<br>para durar.</h2></div><div class="story-copy"><p><strong>A Construprime é uma empresa dedicada à construção e transformação de espaços.</strong> Este protótipo traz uma base institucional que será ajustada à história, à equipe e à especialidade real da empresa.</p><p>Nosso compromisso proposto é trabalhar com comunicação transparente, organização e atenção aos detalhes — princípios que devem ser confirmados e personalizados junto à equipe.</p><p class="disclaimer">Informações institucionais provisórias, pendentes de confirmação e personalização pela equipe da Construprime.</p></div></div></section>
-    <section class="metrics-band"><div class="section-inner metrics metrics-light"><div><b>19</b><span>ANOS DE MERCADO <i>· a confirmar</i></span></div><div><b>360°</b><span>VISÃO DA OBRA</span></div><div><b>01</b><span>PARCEIRO POR ETAPA</span></div><div><b>∞</b><span>POSSIBILIDADES</span></div></div></section><section class="section section-cream"><div class="section-inner split-statement"><span class="eyebrow">CONSTRUINDO COM PROPÓSITO</span><h2>Da primeira ideia à entrega, cada etapa da sua obra merece planejamento, cuidado e atenção aos detalhes.</h2>${routeLink("/contato", "Converse sobre sua obra ↗", "button button-primary")}</div></section></main>`;
+  return `<main id="conteudo">${pageHero("Quem somos", "Construir é mais do que erguer paredes.", "Construção civil, reformas e transformação de espaços com atenção a cada etapa.")}
+    <section class="section"><div class="section-inner inner-story"><div class="story-lead"><span class="eyebrow">A EMPRESA</span><h2>Espaços pensados<br>para durar.</h2></div><div class="story-copy"><p><strong>A Construprime atua em construção civil, reformas e gestão de obras.</strong> O trabalho começa pela compreensão do local, dos objetivos e das prioridades de cada projeto.</p><p>Com o escopo alinhado, os próximos passos são conversados com clareza: serviços envolvidos, etapas, responsabilidades e acompanhamento.</p><p>Para apresentar sua obra, fale diretamente com a Construprime pelo WhatsApp.</p>${routeLink("/contato", "Converse sobre sua obra ↗", "button button-primary")}</div></div></section><section class="company-promise"><div class="section-inner"><span class="eyebrow eyebrow-light">CONSTRUINDO COM PROPÓSITO</span><h2>Da primeira ideia à entrega, cada etapa da sua obra merece planejamento, cuidado e atenção aos detalhes.</h2>${routeLink("/contato", "Conte sobre seu projeto ↗", "button button-light")}</div></section></main>`;
 }
 
 function founderPage() {
-  return `<main id="conteudo">${pageHero("Quem conduz", "Uma obra se faz com técnica. E também com presença.", "Flávio · fundador e CEO")}
-    <section class="section"><div class="section-inner founder-detail"><figure class="founder-monogram"><img src="/manus-storage/ceo-flavio_c5af9c99.jpg" alt="Imagem ilustrativa usada na referência para representar o fundador Flávio; confirmar se é fotografia oficial." width="640" height="640" loading="lazy"><figcaption>Imagem ilustrativa de referência · confirmar antes de usar como retrato oficial</figcaption></figure><div class="story-copy"><span class="eyebrow">FUNDADOR</span><h2>Flávio, fundador e CEO da Construprime,</h2><p>está à frente da visão e do desenvolvimento da empresa. Esta apresentação será aprofundada com a trajetória do fundador, os valores que orientam o trabalho e os marcos dos 19 anos de mercado.</p><p class="disclaimer">Biografia e marcos da trajetória precisam ser confirmados e complementados pela equipe. Não foram acrescentadas credenciais ou informações biográficas não disponíveis na referência.</p>${routeLink("/contato", "Converse sobre sua obra ↗", "text-link")}</div></div></section></main>`;
+  return `<main id="conteudo">${pageHero("Quem conduz", "Uma obra se faz com técnica. E também com presença.", "Flávio · Fundador e CEO")}
+    <section class="section"><div class="section-inner founder-detail"><figure class="founder-monogram"><span aria-hidden="true">F</span><figcaption>Flávio · Fundador e CEO da Construprime</figcaption></figure><div class="story-copy"><span class="eyebrow">FUNDADOR</span><h2>Flávio, fundador e CEO da Construprime.</h2><p>À frente da empresa, Flávio conduz conversas sobre construção, reformas e projetos. Para conhecer as necessidades da sua obra e conversar sobre os próximos passos, entre em contato com a equipe.</p>${routeLink("/contato", "Fale com a Construprime ↗", "text-link")}</div></div></section></main>`;
 }
 
 function servicesPage() {
-  return `<main id="conteudo">${pageHero("O que fazemos", "Para cada desafio, um jeito de construir.", "Soluções organizadas para acompanhar o projeto com mais clareza, do primeiro desenho à entrega.")}
-    <section class="section section-cream"><div class="section-inner"><div class="service-grid service-grid-page">${serviceCards()}</div><p class="disclaimer page-disclaimer">Serviços e escopos apresentados como base provisória. A disponibilidade, o porte dos projetos e a região de atendimento precisam ser confirmados com a Construprime.</p></div></section><section class="closing-strip"><span>Tem um projeto em mente?</span>${routeLink("/contato", "Converse sobre sua obra ↗", "text-link text-link-light")}</section></main>`;
+  return `<main id="conteudo">${pageHero("O que fazemos", "Para cada desafio, um jeito de construir.", "Conheça as frentes de atuação da Construprime e conte à equipe sobre o que você precisa.")}
+    <section class="section section-cream"><div class="section-inner"><div class="service-grid service-grid-page">${serviceCards()}</div><p class="service-guidance">O escopo, as etapas e os próximos passos são conversados conforme as características de cada obra.</p></div></section><section class="closing-strip"><span>Tem um projeto em mente?</span>${routeLink("/contato", "Converse sobre sua obra ↗", "text-link text-link-light")}</section></main>`;
 }
 
 function projectsPage() {
-  return `<main id="conteudo">${pageHero("Projetos", "Espaços que começam antes da obra.", "Uma seleção-conceito para mostrar como a Construprime pensa cada projeto como uma experiência completa.")}
-    <section class="section"><div class="section-inner"><div class="project-grid project-grid-page">${projectCards()}</div><p class="disclaimer page-disclaimer">Todos os nomes, locais e visuais desta seleção estão apresentados como projetos-conceito. As imagens são ilustrativas e não representam obras executadas ou clientes confirmados.</p></div></section></main>`;
+  return `<main id="conteudo">${pageHero("Projetos", "Seu projeto tem um ponto de partida.", "Organize as informações essenciais para iniciar uma conversa produtiva sobre a obra.")}
+    <section class="section"><div class="section-inner"><div class="project-start project-start-page"><article><span>01 · OBJETIVO</span><h2>O que precisa ser feito?</h2><p>Descreva o que pretende construir, reformar, melhorar ou concluir.</p></article><article><span>02 · LOCAL</span><h2>Onde será a obra?</h2><p>Informe cidade e bairro para dar contexto ao seu pedido.</p></article><article><span>03 · MOMENTO</span><h2>Em que etapa está?</h2><p>Conte se está iniciando o planejamento, se já tem projeto ou se a execução começou.</p></article></div><div class="project-brief-cta"><div><span class="eyebrow">O PRÓXIMO PASSO</span><h2>Vamos conversar sobre sua obra.</h2><p>A equipe poderá entender melhor a demanda e orientar a conversa sobre escopo e próximos passos.</p></div>${routeLink("/contato", "Apresentar meu projeto ↗", "button button-primary")}</div></div></section></main>`;
 }
 
 function processPage() {
-  return `<main id="conteudo">${pageHero("Como trabalhamos", "Clareza do primeiro contato à execução.", "O processo é uma forma de cuidar do projeto. Por isso, cada etapa deixa claro o que está acontecendo e o que vem depois.")}
-    <section class="section section-cream"><div class="section-inner process-page"><div class="process-page-intro"><span class="eyebrow">UM PASSO DE CADA VEZ</span><p>Conhecemos sua necessidade, alinhamos as informações e combinamos os próximos passos. Etapas e formas de acompanhamento devem ser ajustadas ao escopo real de cada projeto.</p></div><div class="steps-list steps-list-page">${processSteps()}</div></div></section></main>`;
+  return `<main id="conteudo">${pageHero("Como trabalhamos", "Clareza do primeiro contato à execução.", "As etapas ajudam a organizar o entendimento do projeto e a conversa sobre os próximos passos.")}
+    <section class="section section-cream"><div class="section-inner process-page"><div class="process-page-intro"><span class="eyebrow">UM PASSO DE CADA VEZ</span><p>Conhecer a necessidade, alinhar as informações e combinar responsabilidades contribui para uma condução mais clara da obra. As etapas e o acompanhamento são definidos de acordo com o escopo.</p>${routeLink("/contato", "Converse sobre sua obra ↗", "text-link")}</div><div class="steps-list steps-list-page">${processSteps()}</div></div></section></main>`;
 }
 
 function manifestoPage() {
-  return `<main id="conteudo">${pageHero("Manifesto", "Construir com propósito.", "Uma base para o texto institucional definitivo da Construprime.")}
-    <section class="section manifesto-section"><div class="section-inner manifesto-inner"><span class="eyebrow">TEXTO-BASE · A CONFIRMAR</span><h2>“Um parceiro para transformar planos em espaços reais — com clareza em cada etapa.”</h2><p>Esta página mantém o espaço do manifesto institucional. O texto acima reaproveita a frase de apresentação da referência; princípios e declarações adicionais devem ser escritos e aprovados pela equipe da Construprime.</p>${routeLink("/contato", "Converse sobre sua obra ↗", "text-link")}</div></section></main>`;
+  return `<main id="conteudo">${pageHero("Manifesto", "Construir com propósito.", "Planejamento, clareza e cuidado em cada etapa da obra.")}
+    <section class="section manifesto-section"><div class="section-inner manifesto-inner"><span class="eyebrow">CONSTRUPRIME</span><h2>Um parceiro para transformar planos em espaços reais — com clareza em cada etapa.</h2><p>Construir é fazer escolhas que impactam o espaço e a vida de quem vai usá-lo. Por isso, cada projeto merece atenção ao que importa: entender a necessidade, alinhar o escopo e conduzir a conversa com responsabilidade.</p><p>É assim que a Construprime constrói com propósito.</p>${routeLink("/contato", "Converse sobre sua obra ↗", "text-link")}</div></section></main>`;
 }
 
 function contactPage() {
-  return `<main id="conteudo">${pageHero("Vamos conversar", "O próximo capítulo do seu espaço começa com uma boa conversa.", "Conte um pouco sobre o que você quer construir e conversamos sobre o próximo passo.")}
-    <section class="section section-cream"><div class="section-inner contact-layout"><div class="contact-info"><span class="eyebrow">FALE COM A GENTE</span><h2>Comece por uma conversa.</h2><p>O primeiro contato serve para entender o momento da obra e indicar os próximos passos.</p><div class="contact-detail"><span>WHATSAPP <i>· número informado</i></span><a href="https://wa.me/${whatsappNumber}" target="_blank" rel="noopener noreferrer">${formattedWhatsappNumber}</a></div><div class="contact-detail"><span>E-MAIL <i>· a confirmar</i></span><a href="mailto:contato@construprime.com.br">contato@construprime.com.br</a></div><div class="contact-detail"><span>REGIÃO DE ATENDIMENTO</span><p>A confirmar</p></div><p class="disclaimer">O número de WhatsApp foi informado para contato. E-mail e região de atendimento aguardam confirmação pela Construprime.</p></div>
-      <form class="contact-form" id="contact-form"><span class="eyebrow">SOLICITAR ORÇAMENTO</span><h2>Fale sobre sua obra.</h2><label>Seu nome<input name="name" autocomplete="name" required placeholder="Como podemos chamar você?"></label><label>Seu e-mail<input name="email" type="email" autocomplete="email" required placeholder="voce@exemplo.com"></label><label>Sobre o projeto<select name="project" required><option value="" selected disabled>Selecione uma opção</option><option>Construção civil</option><option>Reformas e melhorias</option><option>Gestão de obras gerais</option><option>Acabamentos</option><option>Outro / ainda estou entendendo</option></select></label><label>Conte um pouco mais<textarea name="message" rows="4" placeholder="O que você gostaria de construir ou transformar?"></textarea></label><button class="button button-primary" type="submit">Continuar no WhatsApp <span aria-hidden="true">↗</span></button><p class="form-note" id="form-note">Este formulário abre o WhatsApp com a mensagem preenchida. Confira os dados e toque em enviar no aplicativo. O site não envia mensagens automaticamente nem armazena seus dados.</p></form></div></section></main>`;
+  return `<main id="conteudo">${pageHero("Vamos conversar", "O próximo capítulo do seu espaço começa com uma boa conversa.", "Conte o que você pretende construir ou transformar e converse com a Construprime.")}
+    <section class="section section-cream"><div class="section-inner contact-layout"><div class="contact-info"><span class="eyebrow">FALE COM A GENTE</span><h2>Comece por uma conversa.</h2><p>Compartilhe o objetivo, a localização e o momento da obra para iniciar o diálogo sobre os próximos passos.</p><div class="contact-detail"><span>WHATSAPP</span><a href="https://wa.me/${whatsappNumber}" target="_blank" rel="noopener noreferrer">${formattedWhatsappNumber} ↗</a></div><p class="contact-promise">Você confere a mensagem no WhatsApp e decide se deseja enviá-la.</p></div>
+      <form class="contact-form" id="contact-form"><span class="eyebrow">SOLICITAR ORÇAMENTO</span><h2>Fale sobre sua obra.</h2><label>Seu nome<input name="name" autocomplete="name" required placeholder="Como podemos chamar você?"></label><label>Seu e-mail (opcional)<input name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com"></label><label>Sobre o projeto<select name="project" required><option value="" selected disabled>Selecione uma opção</option><option>Construção civil</option><option>Reformas e melhorias</option><option>Gestão de obras gerais</option><option>Acabamentos</option><option>Outro / ainda estou entendendo</option></select></label><label>Conte um pouco mais<textarea name="message" rows="4" placeholder="Local da obra, objetivo e etapa atual"></textarea></label><button class="button button-primary" type="submit">Continuar no WhatsApp <span aria-hidden="true">↗</span></button><p class="form-note" id="form-note">O WhatsApp abrirá com uma mensagem preenchida. Revise os dados e envie pelo aplicativo se desejar; o site não envia nem armazena sua mensagem.</p></form></div></section></main>`;
 }
 
 const pageContent = {
@@ -207,7 +195,7 @@ setMeta("property", "og:title", pageSeo.title);
 setMeta("property", "og:description", pageSeo.description);
 setMeta("property", "og:url", canonicalUrl);
 setMeta("property", "og:image", socialImage);
-setMeta("property", "og:image:alt", "Imagem ilustrativa de arquitetura contemporânea da apresentação da Construprime");
+setMeta("property", "og:image:alt", "Imagem editorial ilustrativa de arquitetura contemporânea");
 setMeta("name", "twitter:card", "summary_large_image");
 setMeta("name", "twitter:title", pageSeo.title);
 setMeta("name", "twitter:description", pageSeo.description);
@@ -236,17 +224,18 @@ document.querySelector("#contact-form")?.addEventListener("submit", (event) => {
   event.preventDefault();
   const form = event.currentTarget;
   const data = new FormData(form);
+  const email = String(data.get("email") || "").trim();
   const message = [
-    "Olá! Gostaria de solicitar um orçamento com a Construprime.",
+    "Olá! Gostaria de conversar sobre um projeto com a Construprime.",
     "",
     `Nome: ${data.get("name")}`,
-    `E-mail: ${data.get("email")}`,
-    `Projeto: ${data.get("project")}`,
+    ...(email ? [`E-mail: ${email}`] : []),
+    `Serviço: ${data.get("project")}`,
     "",
-    `Mensagem: ${data.get("message") || "(não informado)"}`,
+    `Projeto: ${data.get("message") || "(quero conversar sobre os próximos passos)"}`,
   ].join("\n");
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   const notice = document.querySelector("#form-note");
-  if (notice) notice.textContent = "O WhatsApp será aberto com a mensagem preenchida. Confira os dados e toque em enviar no aplicativo; nada é enviado automaticamente pelo site.";
+  if (notice) notice.textContent = "O WhatsApp foi aberto com a mensagem preenchida. Revise os dados e envie pelo aplicativo se desejar; nada é enviado automaticamente pelo site.";
   window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 });

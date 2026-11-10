@@ -12,86 +12,47 @@ export const services = [
   {
     number: "01",
     title: "Construção civil",
-    description: "Do planejamento à entrega, construímos espaços com método, cuidado e visão de longo prazo.",
-    note: "Escopo e especialidades a confirmar com a equipe.",
+    description: "Do planejamento à entrega, a obra é conduzida com atenção ao escopo, às etapas e às decisões de cada projeto.",
+    note: "Converse sobre o que você pretende construir.",
   },
   {
     number: "02",
     title: "Reformas e melhorias",
-    description: "Transformamos ambientes existentes sem perder de vista a rotina, o orçamento e o resultado.",
-    note: "Escopo e especialidades a confirmar com a equipe.",
+    description: "Intervenções pensadas para transformar espaços existentes com clareza sobre objetivos e prioridades.",
+    note: "Conte sobre o espaço e as mudanças desejadas.",
   },
   {
     number: "03",
     title: "Gestão de obras gerais",
-    description: "Mais clareza para decidir, mais organização para executar e mais tranquilidade para acompanhar.",
-    note: "Escopo e especialidades a confirmar com a equipe.",
+    description: "Organização das etapas, comunicação e acompanhamento definidos conforme o escopo da obra.",
+    note: "O escopo é alinhado em conversa com a equipe.",
   },
   {
     number: "04",
     title: "Acabamentos",
-    description: "A etapa que traduz o projeto em sensação, uso e durabilidade no dia a dia.",
-    note: "Escopo e especialidades a confirmar com a equipe.",
-  },
-];
-
-export const projects = [
-  {
-    category: "Residencial",
-    title: "Casa Horizonte",
-    location: "São Paulo",
-    image: "/manus-storage/async-images/223mdYCp21U4fcCRXVPFBC/image-2.webp",
-    alt: "Imagem ilustrativa de uma casa contemporânea com jardim, projeto-conceito Casa Horizonte.",
-  },
-  {
-    category: "Interiores",
-    title: "Apartamento Alto",
-    location: "Curitiba",
-    image: "/manus-storage/async-images/223mdYCp21U4fcCRXVPFBC/image-3.webp",
-    alt: "Imagem ilustrativa de uma sala de estar contemporânea, projeto-conceito Apartamento Alto.",
-  },
-  {
-    category: "Arquitetura",
-    title: "Casa Pátio",
-    location: "Campinas",
-    image: "/manus-storage/async-images/223mdYCp21U4fcCRXVPFBC/image-4.webp",
-    alt: "Imagem ilustrativa de uma casa organizada ao redor de um pátio ajardinado, projeto-conceito Casa Pátio.",
+    description: "Atenção à escolha e execução das etapas finais que dão forma ao uso cotidiano dos espaços.",
+    note: "Compartilhe as necessidades do seu projeto.",
   },
 ];
 
 export const steps = [
-  { number: "01", title: "Entender", description: "Conhecemos sua necessidade, o local e o objetivo do projeto." },
-  { number: "02", title: "Definir o escopo", description: "Alinhamos serviços, prioridades e informações para avaliar a demanda." },
-  { number: "03", title: "Propor caminhos", description: "Com as informações reunidas, discutimos os próximos passos e a proposta." },
-  { number: "04", title: "Executar e acompanhar", description: "Combinamos responsabilidades, etapas e formas de acompanhamento." },
+  { number: "01", title: "Entender", description: "Conhecer sua necessidade, o local e o objetivo do projeto." },
+  { number: "02", title: "Definir o escopo", description: "Alinhar serviços, prioridades e informações necessárias para avaliar a demanda." },
+  { number: "03", title: "Propor caminhos", description: "Reunir as informações e discutir os próximos passos e a proposta." },
+  { number: "04", title: "Executar e acompanhar", description: "Combinar responsabilidades, etapas e formas de acompanhamento." },
 ];
 
 export const faqs = [
   {
-    question: "A Construprime atende quais tipos de projeto?",
-    answer: "Este conteúdo é provisório. A versão final deve listar escopos, portes e regiões atendidas pela empresa.",
+    question: "Quais serviços a Construprime oferece?",
+    answer: "Construção civil, reformas e melhorias, gestão de obras gerais e acabamentos. O escopo e a viabilidade são avaliados conforme as características de cada projeto.",
   },
   {
-    question: "Posso solicitar uma conversa antes de ter um projeto fechado?",
-    answer: "Sim. O primeiro contato serve justamente para entender o momento da obra e indicar os próximos passos.",
+    question: "Posso conversar antes de ter um projeto fechado?",
+    answer: "Sim. Você pode iniciar a conversa pelo WhatsApp e compartilhar o que já sabe sobre o local, o tipo de serviço e o momento do projeto.",
   },
   {
-    question: "Como funciona o orçamento?",
-    answer: "Após entender o local, objetivo e escopo, a equipe poderá orientar quais informações são necessárias para uma proposta adequada.",
-  },
-];
-
-export const testimonials = [
-  {
-    quote: "A organização e a clareza em cada etapa fizeram toda a diferença para o nosso projeto.",
-    role: "Cliente residencial · Cliente",
-  },
-  {
-    quote: "Uma parceria próxima, com compromisso e atenção aos detalhes do começo ao fim.",
-    role: "Parceiro de execução · Parceiro",
-  },
-  {
-    quote: "A equipe traduz as decisões da obra de um jeito simples e seguro.",
-    role: "Cliente corporativo · Cliente",
+    question: "Como começo um pedido de orçamento?",
+    answer: "Conte pelo WhatsApp qual serviço procura, onde será realizado e quais são suas prioridades. Com essas informações, a equipe poderá conversar sobre os próximos passos.",
   },
 ];
