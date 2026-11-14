@@ -1,3 +1,3 @@
 export default {
-  logoUrl: "https://construprime-gurrsq8a.manus.space/assets/logo-original.jpg",
+  logoUrl: "https://construprimer.com.br/images/construprime-logo.jpg",
 };

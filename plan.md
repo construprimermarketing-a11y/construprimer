@@ -6,6 +6,10 @@ Usar **Construprimer** como nome oficial em textos visíveis, títulos, metadado
 
 Manter a presença institucional profissional, sem métricas não comprovadas, projetos conceituais ou depoimentos fictícios. Não fabricar histórico, biografia, endereço, região, obras, credenciais ou avaliações. O domínio personalizado confirmado é `construprimer.com.br`; o repositório já é público. Preparar publicação estática pela branch `main`, pasta `/docs`, e manter o domínio Manus existente até os registros DNS do Registro.br apontarem para o GitHub Pages. A resolução DNS do domínio ainda não está configurada.
 
+## Solicitação de horário pelo WhatsApp
+
+Na página de contato, oferecer um formulário separado do pedido de orçamento, com nome, data e horário preferidos e campos opcionais para uma alternativa e observação. O formulário abre uma mensagem preenchida para o WhatsApp; o visitante a revisa e envia, e a equipe confirma manualmente. Não consultar disponibilidade, criar eventos, confirmar reservas nem conectar credenciais do Google Calendar nesta opção.
+
 ## Implementação
 
 Copiar o arquivo recebido sem alteração para `public/images/flavio.png` e enviar uma cópia ao armazenamento do projeto usando o fluxo WebDev; a aplicação servida pela Manus usa o caminho retornado `/manus-storage/<key>`, e a imagem local dá suporte à pré-renderização SEO e futura hospedagem estática. A página inicial e a página Fundador exibem a mesma foto, com dimensões intrínsecas, `alt` descritivo e estilos `object-fit: contain`, mantendo logos e enquadramento.

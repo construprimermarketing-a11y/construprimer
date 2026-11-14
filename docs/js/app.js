@@ -49,8 +49,8 @@ const seoMetadata = {
     keywords: "Construprimer, construção com propósito, construção civil, planejamento de obra",
   },
   "/contato": {
-    title: "Fale com a Construprimer | Solicite um orçamento",
-    description: "Fale com a Construprimer pelo WhatsApp e conte sobre sua obra para conversar sobre os próximos passos.",
+    title: "Contato e pedido de horário | Construprimer",
+    description: "Solicite orçamento ou sugira um horário para conversar com a Construprimer pelo WhatsApp; a equipe confirma manualmente.",
     keywords: "contato Construprimer, orçamento de obra, construção civil, reformas",
   },
 };
@@ -162,9 +162,57 @@ function manifestoPage() {
 }
 
 function contactPage() {
-  return `<main id="conteudo">${pageHero("Vamos conversar", "O próximo capítulo do seu espaço começa com uma boa conversa.", "Conte o que você pretende construir ou transformar e converse com a Construprimer.")}
-    <section class="section section-cream"><div class="section-inner contact-layout"><div class="contact-info"><span class="eyebrow">FALE COM A GENTE</span><h2>Comece por uma conversa.</h2><p>Compartilhe o objetivo, a localização e o momento da obra para iniciar o diálogo sobre os próximos passos.</p><div class="contact-detail"><span>WHATSAPP</span><a href="https://wa.me/${whatsappNumber}" target="_blank" rel="noopener noreferrer">${formattedWhatsappNumber} ↗</a></div><p class="contact-promise">Você confere a mensagem no WhatsApp e decide se deseja enviá-la.</p></div>
-      <form class="contact-form" id="contact-form"><span class="eyebrow">SOLICITAR ORÇAMENTO</span><h2>Fale sobre sua obra.</h2><label>Seu nome<input name="name" autocomplete="name" required placeholder="Como podemos chamar você?"></label><label>Seu e-mail (opcional)<input name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com"></label><label>Sobre o projeto<select name="project" required><option value="" selected disabled>Selecione uma opção</option><option>Construção civil</option><option>Reformas e melhorias</option><option>Gestão de obras gerais</option><option>Acabamentos</option><option>Outro / ainda estou entendendo</option></select></label><label>Conte um pouco mais<textarea name="message" rows="4" placeholder="Local da obra, objetivo e etapa atual"></textarea></label><button class="button button-primary" type="submit">Continuar no WhatsApp <span aria-hidden="true">↗</span></button><p class="form-note" id="form-note">O WhatsApp abrirá com uma mensagem preenchida. Revise os dados e envie pelo aplicativo se desejar; o site não envia nem armazena sua mensagem.</p></form></div></section></main>`;
+  const localToday = new Date();
+  localToday.setMinutes(localToday.getMinutes() - localToday.getTimezoneOffset());
+  const minScheduleDate = localToday.toISOString().slice(0, 10);
+  return `
+    <main id="conteudo">
+      ${pageHero("Vamos conversar", "O próximo capítulo do seu espaço começa com uma boa conversa.", "Conte o que você pretende construir ou transformar e converse com a Construprimer.")}
+      <section class="section section-cream">
+        <div class="section-inner contact-layout">
+          <div class="contact-info">
+            <span class="eyebrow">FALE COM A GENTE</span>
+            <h2>Comece por uma conversa.</h2>
+            <p>Compartilhe o objetivo, a localização e o momento da obra para iniciar o diálogo sobre os próximos passos.</p>
+            <div class="contact-detail">
+              <span>WHATSAPP</span>
+              <a href="https://wa.me/${whatsappNumber}" target="_blank" rel="noopener noreferrer">${formattedWhatsappNumber} ↗</a>
+            </div>
+            <p class="contact-promise">Você confere a mensagem no WhatsApp e decide se deseja enviá-la.</p>
+          </div>
+          <div class="contact-form-stack">
+            <form class="contact-form" id="contact-form">
+              <span class="eyebrow">SOLICITAR ORÇAMENTO</span>
+              <h2>Fale sobre sua obra.</h2>
+              <label>Seu nome<input name="name" autocomplete="name" required placeholder="Como podemos chamar você?"></label>
+              <label>Seu e-mail (opcional)<input name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com"></label>
+              <label>Sobre o projeto<select name="project" required><option value="" selected disabled>Selecione uma opção</option><option>Construção civil</option><option>Reformas e melhorias</option><option>Gestão de obras gerais</option><option>Acabamentos</option><option>Outro / ainda estou entendendo</option></select></label>
+              <label>Conte um pouco mais<textarea name="message" rows="4" placeholder="Local da obra, objetivo e etapa atual"></textarea></label>
+              <button class="button button-primary" type="submit">Continuar no WhatsApp <span aria-hidden="true">↗</span></button>
+              <p class="form-note" id="form-note">O WhatsApp abrirá com uma mensagem preenchida. Revise os dados e envie pelo aplicativo se desejar; o site não envia nem armazena sua mensagem.</p>
+            </form>
+            <form class="contact-form schedule-form" id="schedule-form" aria-describedby="schedule-help schedule-form-note">
+              <span class="eyebrow">PEDIDO DE HORÁRIO</span>
+              <h2>Vamos combinar uma conversa.</h2>
+              <p class="form-intro" id="schedule-help">Indique uma data e um horário de preferência. A equipe responde pelo WhatsApp para confirmar manualmente.</p>
+              <label>Seu nome<input name="schedule_name" autocomplete="name" required maxlength="100" placeholder="Como podemos chamar você?"></label>
+              <div class="schedule-fields">
+                <label>Data preferida<input name="preferred_date" type="date" min="${minScheduleDate}" required></label>
+                <label>Horário preferido<input name="preferred_time" type="time" required></label>
+              </div>
+              <p class="schedule-alt-note">Se quiser, informe uma segunda opção.</p>
+              <div class="schedule-fields">
+                <label>Outra data (opcional)<input name="alternate_date" type="date" min="${minScheduleDate}"></label>
+                <label>Outro horário (opcional)<input name="alternate_time" type="time"></label>
+              </div>
+              <label>Observação (opcional)<textarea name="schedule_note" rows="3" maxlength="600" placeholder="O que gostaria de conversar?"></textarea></label>
+              <button class="button button-primary" type="submit">Solicitar pelo WhatsApp <span aria-hidden="true">↗</span></button>
+              <p class="form-note" id="schedule-form-note" aria-live="polite">Este pedido não reserva nem confirma horário e não consulta um calendário. Revise a mensagem no WhatsApp e envie se desejar; o site não transmite nem armazena os dados automaticamente.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>`;
 }
 
 const pageContent = {
@@ -228,6 +276,34 @@ mainNav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", 
   mainNav.classList.remove("is-open");
   menuToggle?.setAttribute("aria-expanded", "false");
 }));
+
+document.querySelector("#schedule-form")?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  const formatDate = (value) => {
+    const [year, month, day] = String(value || "").split("-");
+    return year && month && day ? `${day}/${month}/${year}` : "";
+  };
+  const alternate = [
+    data.get("alternate_date") ? formatDate(data.get("alternate_date")) : "",
+    data.get("alternate_time") ? String(data.get("alternate_time")) : "",
+  ].filter(Boolean).join(" às ");
+  const note = String(data.get("schedule_note") || "").trim();
+  const message = [
+    "Olá! Gostaria de solicitar um horário para conversar com a Construprimer.",
+    "",
+    `Nome: ${data.get("schedule_name")}`,
+    `Preferência: ${formatDate(data.get("preferred_date"))} às ${data.get("preferred_time")}`,
+    ...(alternate ? [`Outra opção: ${alternate}`] : []),
+    ...(note ? [`Observação: ${note}`] : []),
+    "",
+    "Entendo que este pedido não confirma uma reserva; aguardo a confirmação manual da equipe pelo WhatsApp.",
+  ].join("\n");
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  const notice = document.querySelector("#schedule-form-note");
+  if (notice) notice.textContent = "O WhatsApp foi aberto com seu pedido preenchido. Revise e envie pelo aplicativo se desejar; a equipe confirmará manualmente. O site não reserva o horário nem envia ou armazena a mensagem.";
+  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+});
 
 document.querySelector("#contact-form")?.addEventListener("submit", (event) => {
   event.preventDefault();

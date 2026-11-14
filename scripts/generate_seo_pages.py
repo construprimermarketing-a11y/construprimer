@@ -4,7 +4,7 @@ from pathlib import Path
 import argparse
 import re
 import shutil
-from urllib.parse import urlsplit
+from urllib.parse import quote, urlsplit
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,6 +13,13 @@ DEFAULT_SITE_BASE_URL = "https://construprime-ybsupctp.manus.space/"
 TEMPLATE = (PUBLIC / "index.html").read_text(encoding="utf-8")
 START = "      <!-- SEO_PAGE_CONTENT_START -->"
 END = "      <!-- SEO_PAGE_CONTENT_END -->"
+SCHEDULE_MESSAGE = quote(
+    "Olá! Gostaria de solicitar um horário para conversar com a Construprimer.\n"
+    "Data e horário de preferência: \n"
+    "Outra opção (opcional): \n"
+    "Entendo que este pedido não confirma uma reserva; aguardo a confirmação manual da equipe pelo WhatsApp."
+)
+SCHEDULE_WHATSAPP_URL = f"https://wa.me/5511969435549?text={SCHEDULE_MESSAGE}"
 
 PAGES = {
     "empresa": {
@@ -86,13 +93,15 @@ PAGES = {
 <p><a href="./contato.html">Converse sobre sua obra</a></p>""",
     },
     "contato": {
-        "title": "Fale com a Construprimer | Solicite um orçamento",
-        "description": "Fale com a Construprimer pelo WhatsApp e conte sobre sua obra para conversar sobre os próximos passos.",
+        "title": "Contato e pedido de horário | Construprimer",
+        "description": "Solicite um orçamento ou sugira um horário para conversar com a Construprimer pelo WhatsApp; a equipe confirma manualmente.",
         "keywords": "contato Construprimer, orçamento de obra, construção civil, reformas",
         "heading": "O próximo capítulo do seu espaço começa com uma boa conversa.",
-        "body": """
+        "body": f"""
 <p>Compartilhe o objetivo, a localização e o momento da obra para iniciar o diálogo sobre os próximos passos.</p>
 <h2>WhatsApp</h2><p>Fale com a Construprimer pelo número <a href="https://wa.me/5511969435549">+55 (11) 96943-5549</a>. Você revisa e envia a mensagem pelo próprio aplicativo.</p>
+<h2>Solicitar horário</h2><p>Sugira uma data e horário para conversar. O pedido não consulta disponibilidade nem confirma uma reserva; a equipe responde manualmente pelo WhatsApp.</p>
+<p><a href="{SCHEDULE_WHATSAPP_URL}">Solicitar um horário pelo WhatsApp</a></p>
 <p><a href="https://wa.me/5511969435549">Iniciar conversa no WhatsApp</a></p>""",
     },
 }
