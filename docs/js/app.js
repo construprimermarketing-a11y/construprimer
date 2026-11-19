@@ -142,8 +142,8 @@ function serviceCards() {
 
 function referenceGallery() {
   const cards = projectReferences.map((reference) => `<article class="reference-card">
-    <figure class="reference-photo"><img src="${reference.image}" alt="${reference.alt}" width="${reference.width}" height="${reference.height}" loading="lazy" decoding="async"><figcaption class="image-note"><span aria-hidden="true">◆</span> Imagem ilustrativa</figcaption></figure>
-    <div class="project-meta"><span>${reference.category}</span><span>REFERÊNCIA VISUAL</span></div>
+    <figure class="reference-photo"><img src="${reference.image}" alt="${reference.alt}" width="${reference.width}" height="${reference.height}" loading="lazy" decoding="async"><figcaption class="image-note reference-image-label">Referência</figcaption></figure>
+    <div class="project-meta"><span>${reference.category}</span></div>
     <h3>${reference.title}</h3>
     <p class="reference-card-description">${reference.description}</p>
     <p class="reference-credit">Fonte: <a href="${reference.source}" target="_blank" rel="noopener noreferrer">${reference.credit} ↗</a></p>

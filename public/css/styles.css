@@ -223,10 +223,10 @@ img { max-width: 100%; display: block; }
 .reference-card { min-width: 0; }
 .reference-photo { position: relative; margin: 0; overflow: hidden; background: #e6e2da; }
 .reference-photo img { width: 100%; height: auto; object-fit: contain; }
-.reference-photo .image-note { right: 9px; bottom: 9px; }
+.reference-photo .reference-image-label { right: 8px; bottom: 8px; padding: 3px 6px; border-radius: 2px; font-size: 8px; letter-spacing: .02em; }
 .reference-card h3 { margin: 7px 0 8px; font-family: var(--font-display); font-size: 21px; font-weight: 600; line-height: 1.2; letter-spacing: -.045em; }
 .reference-card-description { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
-.reference-disclaimer { margin: 0 0 30px; padding: 16px 18px; border-left: 3px solid var(--blue); background: rgba(255,255,255,.64); color: #52606d; font-size: 12px; line-height: 1.7; }
+.reference-disclaimer { margin: 0 0 26px; padding: 10px 12px; border-left: 2px solid var(--blue); background: rgba(255,255,255,.5); color: #64707a; font-size: 11px; line-height: 1.65; }
 .reference-disclaimer strong { color: var(--ink); }
 .reference-credit { margin: 12px 0 0; color: #7d8790; font-size: 9px; line-height: 1.6; }
 .reference-credit a, .reference-sources a { color: var(--blue); text-decoration: underline; text-underline-offset: 2px; }

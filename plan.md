@@ -4,7 +4,7 @@
 
 Usar **Construprimer** como nome oficial em textos visíveis, títulos, metadados e dados estruturados, preservando os slugs técnicos, domínio e identificadores de repositório existentes. Inserir a imagem anexada pelo titular como retrato de Flávio, fundador e CEO, na página inicial e na página Fundador. Preservar o arquivo e sua composição sem gerar, substituir ou recortar o rosto.
 
-Manter a presença institucional profissional, sem métricas não comprovadas, projetos conceituais ou depoimentos fictícios. Não fabricar histórico, biografia, endereço, região, obras, credenciais ou avaliações. O domínio personalizado confirmado é `construprimer.com.br`; o repositório já é público. Preparar publicação estática pela branch `main`, pasta `/docs`, e manter o domínio Manus existente até os registros DNS do Registro.br apontarem para o GitHub Pages. A resolução DNS do domínio ainda não está configurada.
+Manter a presença institucional profissional, sem métricas não comprovadas, projetos conceituais ou depoimentos fictícios. Não fabricar histórico, biografia, endereço, região, obras, credenciais ou avaliações. O domínio personalizado `construprimer.com.br` está associado ao projeto Cloudflare Pages `construprimer-site`, conectado ao repositório `construprimermarketing-a11y/construprimer` na branch `main`. Os domínios `construprimer.com.br` e `www.construprimer.com.br` estão ativos e servem o site via HTTPS; a saída estática `/docs` é a publicada pelo Pages. O endereço Manus permanece como Preview. A publicação não garante rastreamento ou posição específica no Google.
 
 ## Solicitação de horário pelo WhatsApp
 
@@ -12,7 +12,11 @@ Na página de contato, oferecer um formulário separado do pedido de orçamento,
 
 ## Galeria de referências ilustrativas
 
-A página Projetos recebe uma pequena galeria de imagens residenciais de bancos com licença adequada para uso no site. Informar de forma visível em cada card e na página que as fotos são ilustrativas e não representam obras executadas, clientes ou equipe da Construprimer. Preservar o conteúdo de organização do pedido de projeto e as chamadas para contato/WhatsApp. Incluir a galeria também no HTML inicial estático para que a página continue compreensível sem JavaScript.
+A página Projetos recebe uma pequena galeria de imagens residenciais de bancos com licença adequada para uso no site. Informar de forma visível em cada card e na página que as fotos são ilustrativas e não representam obras executadas, clientes ou equipe da Construprimer. O selo sobre cada foto deve ser pequeno e discreto, usando “Referência”, e a nota explicativa geral deve permanecer legível sem competir com as imagens. Preservar o conteúdo de organização do pedido de projeto e as chamadas para contato/WhatsApp. Incluir a galeria também no HTML inicial estático para que a página continue compreensível sem JavaScript.
+
+## Comparativo antes e depois
+
+Implementar um comparativo somente quando houver uma foto real de antes e outra de depois do mesmo ambiente/obra, com autorização para publicação. Identificar claramente “Antes” e “Depois”; não combinar fotos de bancos diferentes nem imagens geradas para sugerir que sejam uma obra executada pela Construprimer. Até receber um par real, não exibir um comparativo vazio ou fictício.
 
 ## Implementação
 
