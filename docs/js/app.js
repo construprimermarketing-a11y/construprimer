@@ -34,9 +34,9 @@ const seoMetadata = {
     keywords: "construção civil, reformas, gestão de obras, acabamentos, Construprimer",
   },
   "/projetos": {
-    title: "Converse sobre seu projeto | Construprimer",
-    description: "Organize as informações do seu projeto de construção ou reforma e converse com a Construprimer pelo WhatsApp.",
-    keywords: "projeto de construção, projeto de reforma, orçamento de obra, Construprimer",
+    title: "Referências visuais para reformas | Construprimer",
+    description: "Inspire-se com imagens ilustrativas de reforma e construção residencial. As fotos não representam obras, clientes ou equipe da Construprimer.",
+    keywords: "referências de reforma, imagens ilustrativas, reforma residencial, construção, Construprimer",
   },
   "/processo": {
     title: "Como trabalhamos | Construprimer",
@@ -74,6 +74,41 @@ const localFounderPhoto = new URL("./images/flavio.png", window.location.href).h
 const useProjectStorage = window.location.hostname.endsWith(".manus.space") || window.location.hostname.endsWith(".manus.computer");
 const founderPhotoSrc = useProjectStorage ? "/manus-storage/flavio_1828eaf9.png" : localFounderPhoto;
 const founderPhoto = `<img class="founder-photo" src="${founderPhotoSrc}" alt="Flávio, fundador e CEO da Construprimer." width="640" height="640" loading="lazy" decoding="async">`;
+const projectReferences = [
+  {
+    image: "./images/illustrative/bathroom-reference.webp",
+    alt: "Banheiro residencial com revestimentos claros, bancada dupla e banheira. Imagem ilustrativa.",
+    width: 1800,
+    height: 1200,
+    category: "REFORMA RESIDENCIAL",
+    title: "Banheiros e acabamentos",
+    description: "Referência visual para conversar sobre revestimentos, bancadas e escolhas de acabamento.",
+    credit: "Pexels",
+    source: "https://www.pexels.com/search/bathroom%20renovation/",
+  },
+  {
+    image: "./images/illustrative/kitchen-reference.webp",
+    alt: "Cozinha residencial protegida durante uma renovação. Imagem ilustrativa.",
+    width: 1800,
+    height: 1200,
+    category: "AMBIENTES RESIDENCIAIS",
+    title: "Cozinhas em transformação",
+    description: "Uma inspiração de cozinha durante a preparação para renovar o espaço.",
+    credit: "Unsplash",
+    source: "https://unsplash.com/s/photos/home-renovation",
+  },
+  {
+    image: "./images/illustrative/interior-construction-reference.webp",
+    alt: "Profissionais trabalhando em uma estrutura interna residencial em construção. Imagem ilustrativa.",
+    width: 1800,
+    height: 1350,
+    category: "ETAPA DE EXECUÇÃO",
+    title: "Construção de interiores",
+    description: "Imagem de referência para ilustrar uma etapa de estrutura e preparação interna.",
+    credit: "Brett Rogers / Pexels",
+    source: "https://www.pexels.com/photo/working-on-building-interior-4642437/",
+  },
+];
 
 function logo() {
   return `<a class="brand" href="${routeHref("/")}" aria-label="Construprimer — Início">
@@ -103,6 +138,22 @@ function footer() {
 
 function serviceCards() {
   return services.map((service) => `<article class="service-card"><span class="service-number">${service.number}<span class="service-rule"></span></span><h3>${service.title}</h3><p>${service.description}</p><small>${service.note}</small></article>`).join("");
+}
+
+function referenceGallery() {
+  const cards = projectReferences.map((reference) => `<article class="reference-card">
+    <figure class="reference-photo"><img src="${reference.image}" alt="${reference.alt}" width="${reference.width}" height="${reference.height}" loading="lazy" decoding="async"><figcaption class="image-note"><span aria-hidden="true">◆</span> Imagem ilustrativa</figcaption></figure>
+    <div class="project-meta"><span>${reference.category}</span><span>REFERÊNCIA VISUAL</span></div>
+    <h3>${reference.title}</h3>
+    <p class="reference-card-description">${reference.description}</p>
+    <p class="reference-credit">Fonte: <a href="${reference.source}" target="_blank" rel="noopener noreferrer">${reference.credit} ↗</a></p>
+  </article>`).join("");
+  return `<section class="section section-cream reference-section" aria-labelledby="reference-gallery-title"><div class="section-inner">
+    <div class="section-heading"><div><span class="eyebrow">REFERÊNCIAS VISUAIS</span><h2 id="reference-gallery-title">Ideias para <em>cada ambiente.</em></h2></div><div class="section-heading-side"><p>Fotos de ambientes residenciais e etapas de obra para ajudar a visualizar possibilidades.</p></div></div>
+    <p class="reference-disclaimer"><strong>Imagens ilustrativas:</strong> as fotografias são de bancos de imagem. Elas não retratam obras executadas, clientes ou integrantes da equipe da Construprimer.</p>
+    <div class="reference-grid">${cards}</div>
+    <p class="reference-sources">Licenças das imagens: <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer">Pexels</a> · <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash</a>. A fotografia da etapa de construção é de Brett Rogers via Pexels.</p>
+  </div></section>`;
 }
 
 function processSteps() {
@@ -148,6 +199,7 @@ function servicesPage() {
 
 function projectsPage() {
   return `<main id="conteudo">${pageHero("Projetos", "Seu projeto tem um ponto de partida.", "Organize as informações essenciais para iniciar uma conversa produtiva sobre a obra.")}
+    ${referenceGallery()}
     <section class="section"><div class="section-inner"><div class="project-start project-start-page"><article><span>01 · OBJETIVO</span><h2>O que precisa ser feito?</h2><p>Descreva o que pretende construir, reformar, melhorar ou concluir.</p></article><article><span>02 · LOCAL</span><h2>Onde será a obra?</h2><p>Informe cidade e bairro para dar contexto ao seu pedido.</p></article><article><span>03 · MOMENTO</span><h2>Em que etapa está?</h2><p>Conte se está iniciando o planejamento, se já tem projeto ou se a execução começou.</p></article></div><div class="project-brief-cta"><div><span class="eyebrow">O PRÓXIMO PASSO</span><h2>Vamos conversar sobre sua obra.</h2><p>A equipe poderá entender melhor a demanda e orientar a conversa sobre escopo e próximos passos.</p></div>${routeLink("/contato", "Apresentar meu projeto ↗", "button button-primary")}</div></div></section></main>`;
 }
 

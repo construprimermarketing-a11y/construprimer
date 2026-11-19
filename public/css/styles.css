@@ -219,6 +219,19 @@ img { max-width: 100%; display: block; }
 .project-grid-page { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .project-grid-page .project-card-2, .project-grid-page .project-card-3 { margin-top: 0; }
 .project-grid-page .project-image, .project-grid-page .project-card-2 .project-image, .project-grid-page .project-card-3 .project-image { aspect-ratio: 1 / 1.08; }
+.reference-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; align-items: start; }
+.reference-card { min-width: 0; }
+.reference-photo { position: relative; margin: 0; overflow: hidden; background: #e6e2da; }
+.reference-photo img { width: 100%; height: auto; object-fit: contain; }
+.reference-photo .image-note { right: 9px; bottom: 9px; }
+.reference-card h3 { margin: 7px 0 8px; font-family: var(--font-display); font-size: 21px; font-weight: 600; line-height: 1.2; letter-spacing: -.045em; }
+.reference-card-description { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.reference-disclaimer { margin: 0 0 30px; padding: 16px 18px; border-left: 3px solid var(--blue); background: rgba(255,255,255,.64); color: #52606d; font-size: 12px; line-height: 1.7; }
+.reference-disclaimer strong { color: var(--ink); }
+.reference-credit { margin: 12px 0 0; color: #7d8790; font-size: 9px; line-height: 1.6; }
+.reference-credit a, .reference-sources a { color: var(--blue); text-decoration: underline; text-underline-offset: 2px; }
+.reference-sources { margin: 23px 0 0; color: #7d8790; font-size: 9px; line-height: 1.7; }
+.seo-reference-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .process-page { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(45px, 8vw, 110px); }
 .process-page-intro { max-width: 370px; color: var(--muted); font-size: 13px; }
 .steps-list-page { border-top-color: rgba(17,29,44,.16); }
@@ -284,6 +297,7 @@ img { max-width: 100%; display: block; }
   .project-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 27px 18px; }
   .project-card-2 { margin-top: 38px; }
   .project-card-3 { margin-top: 0; }
+  .reference-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 18px; }
   .project-card-2 .project-image, .project-card-3 .project-image { aspect-ratio: 1.08 / 1; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 16px; }
   .section-heading-side { max-width: 480px; }
@@ -328,6 +342,7 @@ img { max-width: 100%; display: block; }
   .service-card h3 { margin: 16px 0 7px; font-size: 19px; }
   .service-card small { margin-top: 8px; }
   .project-grid, .project-grid-page { grid-template-columns: 1fr; gap: 27px; }
+  .reference-grid { grid-template-columns: 1fr; gap: 28px; }
   .project-card-2 { margin-top: 0; }
   .project-image, .project-card-2 .project-image, .project-card-3 .project-image, .project-grid-page .project-image, .project-grid-page .project-card-2 .project-image, .project-grid-page .project-card-3 .project-image { aspect-ratio: 1.18 / 1; }
   .project-meta { font-size: 7px; }

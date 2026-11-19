@@ -10,6 +10,10 @@ Manter a presença institucional profissional, sem métricas não comprovadas, p
 
 Na página de contato, oferecer um formulário separado do pedido de orçamento, com nome, data e horário preferidos e campos opcionais para uma alternativa e observação. O formulário abre uma mensagem preenchida para o WhatsApp; o visitante a revisa e envia, e a equipe confirma manualmente. Não consultar disponibilidade, criar eventos, confirmar reservas nem conectar credenciais do Google Calendar nesta opção.
 
+## Galeria de referências ilustrativas
+
+A página Projetos recebe uma pequena galeria de imagens residenciais de bancos com licença adequada para uso no site. Informar de forma visível em cada card e na página que as fotos são ilustrativas e não representam obras executadas, clientes ou equipe da Construprimer. Preservar o conteúdo de organização do pedido de projeto e as chamadas para contato/WhatsApp. Incluir a galeria também no HTML inicial estático para que a página continue compreensível sem JavaScript.
+
 ## Implementação
 
 Copiar o arquivo recebido sem alteração para `public/images/flavio.png` e enviar uma cópia ao armazenamento do projeto usando o fluxo WebDev; a aplicação servida pela Manus usa o caminho retornado `/manus-storage/<key>`, e a imagem local dá suporte à pré-renderização SEO e futura hospedagem estática. A página inicial e a página Fundador exibem a mesma foto, com dimensões intrínsecas, `alt` descritivo e estilos `object-fit: contain`, mantendo logos e enquadramento.

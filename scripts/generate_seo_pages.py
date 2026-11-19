@@ -60,12 +60,19 @@ PAGES = {
 <p><a href="./contato.html">Converse sobre sua obra</a></p>""",
     },
     "projetos": {
-        "title": "Converse sobre seu projeto | Construprimer",
-        "description": "Organize as informações do seu projeto de construção ou reforma e converse com a Construprimer pelo WhatsApp.",
-        "keywords": "projeto de construção, projeto de reforma, orçamento de obra, Construprimer",
+        "title": "Referências visuais para reformas | Construprimer",
+        "description": "Inspire-se com imagens ilustrativas de reforma e construção residencial. As fotos não representam obras, clientes ou equipe da Construprimer.",
+        "keywords": "referências de reforma, imagens ilustrativas, reforma residencial, construção, Construprimer",
         "heading": "Seu projeto tem um ponto de partida.",
         "body": """
 <p>Compartilhe as informações essenciais para iniciar uma conversa produtiva sobre a obra.</p>
+<p class="reference-disclaimer"><strong>Imagens ilustrativas:</strong> as fotografias abaixo são de bancos de imagem. Elas não retratam obras executadas, clientes ou integrantes da equipe da Construprimer.</p>
+<div class="reference-grid seo-reference-grid">
+  <article class="reference-card"><figure class="reference-photo"><img src="./images/illustrative/bathroom-reference.webp" alt="Banheiro residencial com revestimentos claros, bancada dupla e banheira. Imagem ilustrativa." width="1800" height="1200" loading="lazy" decoding="async"><figcaption class="image-note">Imagem ilustrativa</figcaption></figure><div class="project-meta"><span>REFORMA RESIDENCIAL</span><span>REFERÊNCIA VISUAL</span></div><h3>Banheiros e acabamentos</h3><p class="reference-card-description">Referência visual para conversar sobre revestimentos, bancadas e escolhas de acabamento.</p><p class="reference-credit">Fonte: <a href="https://www.pexels.com/search/bathroom%20renovation/" target="_blank" rel="noopener noreferrer">Pexels</a></p></article>
+  <article class="reference-card"><figure class="reference-photo"><img src="./images/illustrative/kitchen-reference.webp" alt="Cozinha residencial protegida durante uma renovação. Imagem ilustrativa." width="1800" height="1200" loading="lazy" decoding="async"><figcaption class="image-note">Imagem ilustrativa</figcaption></figure><div class="project-meta"><span>AMBIENTES RESIDENCIAIS</span><span>REFERÊNCIA VISUAL</span></div><h3>Cozinhas em transformação</h3><p class="reference-card-description">Uma inspiração de cozinha durante a preparação para renovar o espaço.</p><p class="reference-credit">Fonte: <a href="https://unsplash.com/s/photos/home-renovation" target="_blank" rel="noopener noreferrer">Unsplash</a></p></article>
+  <article class="reference-card"><figure class="reference-photo"><img src="./images/illustrative/interior-construction-reference.webp" alt="Profissionais trabalhando em uma estrutura interna residencial em construção. Imagem ilustrativa." width="1800" height="1350" loading="lazy" decoding="async"><figcaption class="image-note">Imagem ilustrativa</figcaption></figure><div class="project-meta"><span>ETAPA DE EXECUÇÃO</span><span>REFERÊNCIA VISUAL</span></div><h3>Construção de interiores</h3><p class="reference-card-description">Imagem de referência para ilustrar uma etapa de estrutura e preparação interna.</p><p class="reference-credit">Foto de Brett Rogers via <a href="https://www.pexels.com/photo/working-on-building-interior-4642437/" target="_blank" rel="noopener noreferrer">Pexels</a></p></article>
+</div>
+<p class="reference-sources">Licenças das imagens: <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer">Pexels</a> · <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash</a>. As fotos são apenas ilustrativas e não representam o portfólio da Construprimer.</p>
 <h2>Objetivo</h2><p>Descreva o que pretende construir, reformar, melhorar ou concluir.</p>
 <h2>Local</h2><p>Informe cidade e bairro para dar contexto ao seu pedido.</p>
 <h2>Momento do projeto</h2><p>Conte se está iniciando o planejamento, se já possui projeto ou se a execução começou.</p>
