@@ -76,37 +76,37 @@ const founderPhotoSrc = useProjectStorage ? "/manus-storage/flavio_1828eaf9.png"
 const founderPhoto = `<img class="founder-photo" src="${founderPhotoSrc}" alt="Flávio, fundador e CEO da Construprimer." width="640" height="640" loading="lazy" decoding="async">`;
 const projectReferences = [
   {
-    image: "https://images.unsplash.com/photo-1758239873506-82d0e76244f6?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=75&w=1800",
-    alt: "Banheiro contemporâneo com bancada, espelho e revestimentos claros. Foto ilustrativa de Clay Banks via Unsplash.",
-    width: 1800,
-    height: 1200,
-    category: "REFORMA RESIDENCIAL",
-    title: "Banheiros e acabamentos",
-    description: "Referência visual de banheiro contemporâneo para conversar sobre revestimentos, bancadas e acabamentos.",
-    credit: "Clay Banks / Unsplash",
-    source: "https://unsplash.com/photos/a-modern-bathroom-with-a-vanity-and-tiled-floor-DsrHsPt3uFg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/House_Construction.jpg",
+    alt: "Estrutura de uma residência em construção, com escoramentos e materiais no canteiro. Foto de SrikanthLunavath, CC0.",
+    width: 2412,
+    height: 1472,
+    category: "CONSTRUÇÃO RESIDENCIAL",
+    title: "Estrutura e alvenaria",
+    description: "Registro de uma residência em fase de construção, útil como referência visual de estrutura, escoramento e organização de materiais.",
+    credit: "SrikanthLunavath · CC0 1.0",
+    source: "https://commons.wikimedia.org/wiki/File:House_Construction.jpg",
   },
   {
-    image: "https://images.unsplash.com/photo-1618832515490-e181c4794a45?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=75&w=1800",
-    alt: "Cozinha residencial durante uma renovação, com armários protegidos para a obra. Foto ilustrativa de immo RENOVATION via Unsplash.",
-    width: 1800,
-    height: 1200,
-    category: "AMBIENTES RESIDENCIAIS",
-    title: "Cozinhas em transformação",
-    description: "Referência visual de uma cozinha durante a preparação para renovar o espaço.",
-    credit: "immo RENOVATION / Unsplash",
-    source: "https://unsplash.com/photos/kitchen-renovation-with-white-cabinets-UqNEbyRQ660",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Condominium_Construction_-_NARA_-_543594.jpg",
+    alt: "Trabalhadores executando a estrutura de um edifício residencial em construção. Fotografia de Belinda Rain, acervo EPA/NARA, domínio público nos Estados Unidos.",
+    width: 3000,
+    height: 2033,
+    category: "EXECUÇÃO DE OBRA",
+    title: "Estrutura de edifício",
+    description: "Fotografia histórica de execução estrutural em um edifício residencial, preservada no acervo público da EPA e do National Archives dos Estados Unidos.",
+    credit: "Belinda Rain · EPA / NARA · Domínio público nos EUA",
+    source: "https://commons.wikimedia.org/wiki/File:Condominium_Construction_-_NARA_-_543594.jpg",
   },
   {
-    image: "https://images.unsplash.com/photo-1768321902794-c24fb1f00661?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=75&w=1800",
-    alt: "Interior residencial em reforma, com estrutura e materiais aparentes. Foto ilustrativa de Olek Buzunov via Unsplash.",
-    width: 1800,
-    height: 1200,
-    category: "ETAPA DE EXECUÇÃO",
-    title: "Construção e reforma de interiores",
-    description: "Imagem de referência para visualizar uma etapa de preparação e execução interna.",
-    credit: "Olek Buzunov / Unsplash",
-    source: "https://unsplash.com/photos/interior-room-undergoing-renovation-with-exposed-ceiling-and-materials-df3MSdqSceo",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/ca/CCC_workers_making_concrete_blocks_-_NARA_-_285791.jpg",
+    alt: "Trabalhadores produzindo blocos de concreto em ambiente de trabalho. Fotografia histórica do Bureau of Indian Affairs, acervo NARA, domínio público nos Estados Unidos.",
+    width: 3000,
+    height: 1727,
+    category: "MATERIAIS E PREPARAÇÃO",
+    title: "Produção de blocos de concreto",
+    description: "Registro histórico da fabricação de blocos de concreto, como referência sobre materiais e etapas de preparação para construção.",
+    credit: "Bureau of Indian Affairs · NARA · Domínio público nos EUA",
+    source: "https://commons.wikimedia.org/wiki/File:CCC_workers_making_concrete_blocks_-_NARA_-_285791.jpg",
   }
 ];
 
@@ -152,7 +152,7 @@ function referenceGallery() {
     <div class="section-heading"><div><span class="eyebrow">REFERÊNCIAS VISUAIS</span><h2 id="reference-gallery-title">Ideias para <em>cada ambiente.</em></h2></div><div class="section-heading-side"><p>Fotos de ambientes residenciais e etapas de obra para ajudar a visualizar possibilidades.</p></div></div>
     <p class="reference-disclaimer"><strong>Imagens ilustrativas:</strong> as fotografias são de bancos de imagem. Elas não retratam obras executadas, clientes ou integrantes da equipe da Construprimer.</p>
     <div class="reference-grid">${cards}</div>
-    <p class="reference-sources">Licenças das imagens: <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer">Pexels</a> · <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash</a>. As fotografias são de Clay Banks, immo RENOVATION e Olek Buzunov via Unsplash.</p>
+    <p class="reference-sources">Licenças das imagens: <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer">Pexels</a> · <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash</a>. As fotografias são de SrikanthLunavath (CC0) e dos acervos EPA e NARA (domínio público nos Estados Unidos).</p>
   </div></section>`;
 }
 
