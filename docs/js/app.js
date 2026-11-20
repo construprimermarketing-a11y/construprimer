@@ -160,6 +160,25 @@ function referenceGallery() {
   </div></section>`;
 }
 
+function homeVisualCarousel() {
+  const slides = projectReferences.map((reference, index) => `<article class="visual-slide" aria-label="Imagem ${index+1} de ${projectReferences.length}">
+    <button class="visual-slide-image" type="button" data-gallery-open="${index}" aria-label="Ampliar imagem: ${reference.title}">
+      <img src="${reference.image}" alt="${reference.alt}" width="${reference.width}" height="${reference.height}" loading="lazy" decoding="async">
+      <span class="visual-slide-zoom" aria-hidden="true">＋</span>
+    </button>
+    <div class="visual-slide-copy"><span class="eyebrow">${reference.category}</span><h3>${reference.title}</h3><p>${reference.description}</p><small>Imagem ilustrativa · Acervo visual</small></div>
+  </article>`).join("");
+  return `<section class="visual-showcase section" aria-labelledby="visual-showcase-title">
+    <div class="section-inner">
+      <div class="visual-showcase-heading"><div><span class="eyebrow">MATÉRIA · ESPAÇO · DETALHE</span><h2 id="visual-showcase-title">Inspiração para <em>construir melhor.</em></h2><p>Uma seleção visual para explorar possibilidades de ambientes, materiais e acabamentos.</p></div>
+        <div class="visual-carousel-controls"><button type="button" class="visual-carousel-prev" aria-label="Imagem anterior">←</button><span class="visual-carousel-count" aria-live="polite">01 / 03</span><button type="button" class="visual-carousel-next" aria-label="Próxima imagem">→</button></div>
+      </div>
+      <div class="visual-carousel" tabindex="0" aria-label="Carrossel de referências visuais"><div class="visual-carousel-track">${slides}</div></div>
+      <p class="visual-showcase-note">As imagens são referências ilustrativas e não representam obras executadas pela Construprimer.</p>
+    </div>
+  </section>`;
+}
+
 function processSteps() {
   return steps.map((step) => `<article class="step-card"><span class="step-index">${step.number}</span><div><h3>${step.title}</h3><p>${step.description}</p></div></article>`).join("");
 }
@@ -177,7 +196,7 @@ function homePage() {
       <a class="hero-scroll" href="#experiencia" aria-label="Rolar para conhecer a Construprimer"><span></span>ROLE PARA DESCOBRIR</a>${imageNote}</section>
     <div class="motion-marquee" aria-label="Construção civil, reformas, gestão de obras e acabamentos"><div><span>CONSTRUÇÃO CIVIL</span><i>✳</i><span>REFORMAS</span><i>✳</i><span>GESTÃO DE OBRAS</span><i>✳</i><span>ACABAMENTOS</span><i>✳</i><span>CONSTRUÇÃO CIVIL</span><i>✳</i><span>REFORMAS</span><i>✳</i><span>GESTÃO DE OBRAS</span><i>✳</i><span>ACABAMENTOS</span><i>✳</i></div></div>
     <section id="experiencia" class="section intro-section intro-experience"><div class="section-inner intro-layout"><div class="intro-title"><span class="eyebrow"><span class="eyebrow-line"></span>UMA NOVA FORMA DE COMEÇAR</span><h2>Não é só sobre construir. É sobre <em>fazer acontecer.</em></h2><p class="intro-side-note">Cada projeto tem seu contexto. A primeira etapa é entender o que você precisa.</p>${routeLink("/empresa", "Conheça a Construprimer <span aria-hidden='true'>↗</span>", "text-link")}</div><div class="intro-copy"><p><strong>A Construprimer atua em construção civil, reformas e transformação de espaços.</strong> O trabalho começa por uma conversa sobre necessidades, prioridades e objetivos.</p><p>Planejamento, clareza e atenção às etapas orientam o diálogo — da definição do escopo aos próximos passos.</p><div class="company-pillars"><div><span>01</span><b>Planejamento</b><small>Entender o que a obra precisa.</small></div><div><span>02</span><b>Clareza</b><small>Alinhar escopo e prioridades.</small></div><div><span>03</span><b>Acompanhamento</b><small>Combinar etapas e responsabilidades.</small></div></div></div></div></section>
-    <section class="founder-band founder-band-home"><figure class="founder-portrait">${founderPhoto}<figcaption>Flávio · Fundador e CEO da Construprimer</figcaption></figure><div class="founder-copy"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>QUEM CONDUZ</span><h2>Uma obra se faz com técnica. <em>E também com presença.</em></h2><p><strong>Flávio é fundador e CEO da Construprimer.</strong> Para apresentar seu projeto, conte sobre a obra e converse diretamente com a equipe.</p>${routeLink("/fundador", "Conheça o fundador <span aria-hidden='true'>↗</span>", "text-link text-link-light")}</div></section>
+    ${homeVisualCarousel()}\n    <section class="founder-band founder-band-home"><figure class="founder-portrait">${founderPhoto}<figcaption>Flávio · Fundador e CEO da Construprimer</figcaption></figure><div class="founder-copy"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>QUEM CONDUZ</span><h2>Uma obra se faz com técnica. <em>E também com presença.</em></h2><p><strong>Flávio é fundador e CEO da Construprimer.</strong> Para apresentar seu projeto, conte sobre a obra e converse diretamente com a equipe.</p>${routeLink("/fundador", "Conheça o fundador <span aria-hidden='true'>↗</span>", "text-link text-link-light")}</div></section>
     <section class="services-section section section-cream services-experience"><div class="section-inner"><div class="section-heading"><div><span class="eyebrow">O QUE FAZEMOS</span><h2>Escolha o que precisa.<br><em>A gente conversa sobre como começar.</em></h2></div><div class="section-heading-side"><p>Conheça as frentes de atuação e converse com a equipe para avaliar o escopo do seu projeto.</p>${routeLink("/servicos", "Ver todos os serviços ↗", "text-link")}</div></div><div class="service-grid">${serviceCards()}</div></div></section>
     <section class="project-builder-section section"><div class="section-inner project-builder-layout"><div class="project-builder-intro"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>SEU PROJETO COMEÇA AQUI</span><h2>Vamos dar forma à sua <em>ideia?</em></h2><p>Responda algumas perguntas rápidas. No final, você poderá revisar as informações e abrir uma conversa no WhatsApp.</p><div class="builder-progress"><span>BRIEFING INICIAL</span><span>SEM COMPROMISSO · SEM ENVIO AUTOMÁTICO</span></div></div>
       <form class="project-builder" id="project-builder">
@@ -333,6 +352,35 @@ canonicalLink.href = canonicalUrl;
 if (!canonicalLink.isConnected) document.head.append(canonicalLink);
 
 document.querySelector("#app").innerHTML = `${siteHeader()}${(pageContent[path] || homePage)()}${footer()}`;
+
+// Carrossel editorial: botões, teclado e gesto horizontal.
+const visualCarousel = document.querySelector(".visual-carousel");
+if (visualCarousel) {
+  const track = visualCarousel.querySelector(".visual-carousel-track");
+  const slides = [...visualCarousel.querySelectorAll(".visual-slide")];
+  const counter = visualCarousel.parentElement.querySelector(".visual-carousel-count");
+  const previous = visualCarousel.parentElement.querySelector(".visual-carousel-prev");
+  const next = visualCarousel.parentElement.querySelector(".visual-carousel-next");
+  const updateCarousel = () => {
+    const step = slides[0] ? slides[0].getBoundingClientRect().width + 20 : 1;
+    const index = Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / Math.max(1, step))));
+    if (counter) counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+    if (previous) previous.disabled = index === 0;
+    if (next) next.disabled = index === slides.length - 1;
+  };
+  const moveCarousel = (direction) => {
+    const slide = slides[0];
+    if (slide) track.scrollBy({ left: direction * (slide.getBoundingClientRect().width + 20), behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  };
+  previous?.addEventListener("click", () => moveCarousel(-1));
+  next?.addEventListener("click", () => moveCarousel(1));
+  track.addEventListener("scroll", updateCarousel, { passive: true });
+  visualCarousel.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") { event.preventDefault(); moveCarousel(1); }
+    if (event.key === "ArrowLeft") { event.preventDefault(); moveCarousel(-1); }
+  });
+  updateCarousel();
+}
 
 // Interações progressivas: filtros, ampliação da galeria e atalhos de contato.
 const galleryFilters = document.querySelectorAll("[data-gallery-filter]");
