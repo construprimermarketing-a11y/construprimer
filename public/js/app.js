@@ -76,38 +76,38 @@ const founderPhotoSrc = useProjectStorage ? "/manus-storage/flavio_1828eaf9.png"
 const founderPhoto = `<img class="founder-photo" src="${founderPhotoSrc}" alt="Flávio, fundador e CEO da Construprimer." width="640" height="640" loading="lazy" decoding="async">`;
 const projectReferences = [
   {
-    image: "./images/illustrative/bathroom-reference.webp",
-    alt: "Banheiro residencial com revestimentos claros, bancada dupla e banheira. Imagem ilustrativa.",
+    image: "https://images.unsplash.com/photo-1758239873506-82d0e76244f6?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=75&w=1800",
+    alt: "Banheiro contemporâneo com bancada, espelho e revestimentos claros. Foto ilustrativa de Clay Banks via Unsplash.",
     width: 1800,
     height: 1200,
     category: "REFORMA RESIDENCIAL",
     title: "Banheiros e acabamentos",
-    description: "Referência visual para conversar sobre revestimentos, bancadas e escolhas de acabamento.",
-    credit: "Pexels",
-    source: "https://www.pexels.com/search/bathroom%20renovation/",
+    description: "Referência visual de banheiro contemporâneo para conversar sobre revestimentos, bancadas e acabamentos.",
+    credit: "Clay Banks / Unsplash",
+    source: "https://unsplash.com/photos/a-modern-bathroom-with-a-vanity-and-tiled-floor-DsrHsPt3uFg",
   },
   {
-    image: "./images/illustrative/kitchen-reference.webp",
-    alt: "Cozinha residencial protegida durante uma renovação. Imagem ilustrativa.",
+    image: "https://images.unsplash.com/photo-1618832515490-e181c4794a45?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=75&w=1800",
+    alt: "Cozinha residencial durante uma renovação, com armários protegidos para a obra. Foto ilustrativa de immo RENOVATION via Unsplash.",
     width: 1800,
     height: 1200,
     category: "AMBIENTES RESIDENCIAIS",
     title: "Cozinhas em transformação",
-    description: "Uma inspiração de cozinha durante a preparação para renovar o espaço.",
-    credit: "Unsplash",
-    source: "https://unsplash.com/s/photos/home-renovation",
+    description: "Referência visual de uma cozinha durante a preparação para renovar o espaço.",
+    credit: "immo RENOVATION / Unsplash",
+    source: "https://unsplash.com/photos/kitchen-renovation-with-white-cabinets-UqNEbyRQ660",
   },
   {
-    image: "./images/illustrative/interior-construction-reference.webp",
-    alt: "Profissionais trabalhando em uma estrutura interna residencial em construção. Imagem ilustrativa.",
+    image: "https://images.unsplash.com/photo-1768321902794-c24fb1f00661?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=75&w=1800",
+    alt: "Interior residencial em reforma, com estrutura e materiais aparentes. Foto ilustrativa de Olek Buzunov via Unsplash.",
     width: 1800,
-    height: 1350,
+    height: 1200,
     category: "ETAPA DE EXECUÇÃO",
-    title: "Construção de interiores",
-    description: "Imagem de referência para ilustrar uma etapa de estrutura e preparação interna.",
-    credit: "Brett Rogers / Pexels",
-    source: "https://www.pexels.com/photo/working-on-building-interior-4642437/",
-  },
+    title: "Construção e reforma de interiores",
+    description: "Imagem de referência para visualizar uma etapa de preparação e execução interna.",
+    credit: "Olek Buzunov / Unsplash",
+    source: "https://unsplash.com/photos/interior-room-undergoing-renovation-with-exposed-ceiling-and-materials-df3MSdqSceo",
+  }
 ];
 
 function logo() {
@@ -152,7 +152,7 @@ function referenceGallery() {
     <div class="section-heading"><div><span class="eyebrow">REFERÊNCIAS VISUAIS</span><h2 id="reference-gallery-title">Ideias para <em>cada ambiente.</em></h2></div><div class="section-heading-side"><p>Fotos de ambientes residenciais e etapas de obra para ajudar a visualizar possibilidades.</p></div></div>
     <p class="reference-disclaimer"><strong>Imagens ilustrativas:</strong> as fotografias são de bancos de imagem. Elas não retratam obras executadas, clientes ou integrantes da equipe da Construprimer.</p>
     <div class="reference-grid">${cards}</div>
-    <p class="reference-sources">Licenças das imagens: <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer">Pexels</a> · <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash</a>. A fotografia da etapa de construção é de Brett Rogers via Pexels.</p>
+    <p class="reference-sources">Licenças das imagens: <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer">Pexels</a> · <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash</a>. As fotografias são de Clay Banks, immo RENOVATION e Olek Buzunov via Unsplash.</p>
   </div></section>`;
 }
 
