@@ -21,6 +21,9 @@
 - [ ] **Google Analytics 4 e Meta Pixel** — Inserir após o titular fornecer Measurement ID `G-...` e ID do Pixel, e confirmar consentimento. Preferir carregar scripts só depois do consentimento; não inventar IDs nem habilitar rastreio silenciosamente.
 - [ ] **Perfil da Empresa no Google** — O nome comercial confirmado é “Construprimer”. Criar ou reivindicar somente após confirmar categoria/serviços, atendimento em endereço e/ou área de serviço, endereço a exibir, cidades/CEPs atendidos, horário, telefone público e existência de perfil anterior. Não expor endereço de base que não recebe clientes. O titular conclui a verificação do Google.
 
+- [x] **Página de privacidade** — Publicar `privacidade.html` em `public/` e `docs/`, explicar o funcionamento do formulário e o encaminhamento manual ao WhatsApp, e incluir a URL no sitemap gerado.
+- [x] **Página 404 e cabeçalhos HTTP** — Publicar uma página 404 personalizada e configurar cabeçalhos de segurança, política de referência e cache em `_headers` nas pastas `public/` e `docs/`.
+
 ## Dados reais ainda necessários
 
 Duas fotos reais do mesmo ambiente/obra (antes e depois) e autorização para publicação; IDs de GA4 e Meta Pixel e regra de consentimento; decisão sobre link de WhatsApp atual ou automação de leads; para o Perfil da Empresa, categoria, serviços, local/área de atendimento, endereço apropriado, horário e existência de perfil anterior. Não enviar senhas ou tokens no chat. Não exibir dados comerciais não confirmados como fatos.
