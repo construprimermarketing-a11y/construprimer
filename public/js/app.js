@@ -141,16 +141,17 @@ function serviceCards() {
 }
 
 function referenceGallery() {
-  const cards = projectReferences.map((reference) => `<article class="reference-card">
-    <figure class="reference-photo"><img src="${reference.image}" alt="${reference.alt}" width="${reference.width}" height="${reference.height}" loading="lazy" decoding="async"><figcaption class="image-note reference-image-label">Referência</figcaption></figure>
+  const cards = projectReferences.map((reference, index) => `<article class="reference-card" data-gallery-category="${reference.category}">
+    <figure class="reference-photo"><button class="gallery-image-button" type="button" data-gallery-open="${index}" aria-label="Ampliar imagem: ${reference.title}"><img src="${reference.image}" alt="${reference.alt}" width="${reference.width}" height="${reference.height}" loading="lazy" decoding="async"><span class="gallery-zoom" aria-hidden="true">＋ Ampliar</span></button><figcaption class="image-note reference-image-label">Referência ilustrativa</figcaption></figure>
     <div class="project-meta"><span>${reference.category}</span></div>
     <h3>${reference.title}</h3>
     <p class="reference-card-description">${reference.description}</p>
     <p class="reference-credit">Fonte: <a href="${reference.source}" target="_blank" rel="noopener noreferrer">${reference.credit} ↗</a></p>
   </article>`).join("");
   return `<section class="section section-cream reference-section" aria-labelledby="reference-gallery-title"><div class="section-inner">
-    <div class="section-heading"><div><span class="eyebrow">REFERÊNCIAS VISUAIS</span><h2 id="reference-gallery-title">Ideias para <em>cada ambiente.</em></h2></div><div class="section-heading-side"><p>Fotos de ambientes residenciais e etapas de obra para ajudar a visualizar possibilidades.</p></div></div>
-    <p class="reference-disclaimer"><strong>Imagens ilustrativas:</strong> as fotografias são de bancos de imagem. Elas não retratam obras executadas, clientes ou integrantes da equipe da Construprimer.</p>
+    <div class="section-heading"><div><span class="eyebrow">REFERÊNCIAS VISUAIS</span><h2 id="reference-gallery-title">Ideias para <em>cada ambiente.</em></h2></div><div class="section-heading-side"><p>Explore as imagens por etapa da obra e amplie para observar os detalhes.</p></div></div>
+    <p class="reference-disclaimer"><strong>Imagens ilustrativas:</strong> as fotografias não retratam obras executadas, clientes ou integrantes da equipe da Construprimer.</p>
+    <div class="gallery-filters" role="group" aria-label="Filtrar referências visuais"><button class="gallery-filter is-active" type="button" data-gallery-filter="all" aria-pressed="true">Todas</button><button class="gallery-filter" type="button" data-gallery-filter="CONSTRUÇÃO RESIDENCIAL" aria-pressed="false">Construção residencial</button><button class="gallery-filter" type="button" data-gallery-filter="EXECUÇÃO DE OBRA" aria-pressed="false">Execução de obra</button><button class="gallery-filter" type="button" data-gallery-filter="MATERIAIS E PREPARAÇÃO" aria-pressed="false">Materiais</button></div>
     <div class="reference-grid">${cards}</div>
     <p class="reference-sources">Licenças: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.pt-br" target="_blank" rel="noopener noreferrer">CC0 1.0</a> e domínio público indicado nos registros dos acervos EPA/NARA. As fotografias são de SrikanthLunavath e dos acervos EPA/NARA.</p>
   </div></section>`;
@@ -315,6 +316,74 @@ canonicalLink.href = canonicalUrl;
 if (!canonicalLink.isConnected) document.head.append(canonicalLink);
 
 document.querySelector("#app").innerHTML = `${siteHeader()}${(pageContent[path] || homePage)()}${footer()}`;
+
+// Interações progressivas: filtros, ampliação da galeria e atalhos de contato.
+const galleryFilters = document.querySelectorAll("[data-gallery-filter]");
+galleryFilters.forEach((filter) => filter.addEventListener("click", () => {
+  const selected = filter.dataset.galleryFilter;
+  galleryFilters.forEach((button) => {
+    const active = button === filter;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+  document.querySelectorAll(".reference-card[data-gallery-category]").forEach((card) => {
+    card.hidden = selected !== "all" && card.dataset.galleryCategory !== selected;
+  });
+}));
+
+const galleryButtons = document.querySelectorAll("[data-gallery-open]");
+if (galleryButtons.length) {
+  const lightbox = document.createElement("div");
+  lightbox.className = "gallery-lightbox";
+  lightbox.hidden = true;
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", "Visualização ampliada da referência");
+  lightbox.innerHTML = `<div class="gallery-lightbox-panel"><button class="gallery-lightbox-close" type="button" aria-label="Fechar imagem">×</button><img alt=""><div class="gallery-lightbox-caption"></div></div>`;
+  document.body.append(lightbox);
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    document.body.classList.remove("gallery-lightbox-open");
+  };
+  lightbox.querySelector(".gallery-lightbox-close").addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (event) => { if (event.target === lightbox) closeLightbox(); });
+  document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !lightbox.hidden) closeLightbox(); });
+  galleryButtons.forEach((button) => button.addEventListener("click", () => {
+    const reference = projectReferences[Number(button.dataset.galleryOpen)];
+    if (!reference) return;
+    const image = lightbox.querySelector("img");
+    image.src = reference.image;
+    image.alt = reference.alt;
+    lightbox.querySelector(".gallery-lightbox-caption").textContent = reference.title + " · " + reference.credit;
+    lightbox.hidden = false;
+    document.body.classList.add("gallery-lightbox-open");
+    lightbox.querySelector(".gallery-lightbox-close").focus();
+  }));
+}
+
+if (!document.querySelector(".floating-whatsapp")) {
+  const quickContact = document.createElement("a");
+  quickContact.className = "floating-whatsapp";
+  quickContact.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Olá! Vim pelo site da Construprimer e gostaria de conversar sobre um projeto.")}`;
+  quickContact.target = "_blank";
+  quickContact.rel = "noopener noreferrer";
+  quickContact.setAttribute("aria-label", "Conversar com a Construprimer pelo WhatsApp");
+  quickContact.innerHTML = `<span aria-hidden="true">◉</span><span>Fale com a gente</span><b aria-hidden="true">↗</b>`;
+  document.body.append(quickContact);
+}
+
+const revealTargets = document.querySelectorAll(".section-heading, .service-card, .step-card, .reference-card, .faq-item, .project-start article");
+if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  revealTargets.forEach((element) => element.classList.add("reveal-pending"));
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-revealed");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12 });
+  revealTargets.forEach((element) => revealObserver.observe(element));
+}
 
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
