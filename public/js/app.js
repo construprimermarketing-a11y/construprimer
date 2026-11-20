@@ -166,19 +166,33 @@ function faqBlock() {
 }
 
 function homePage() {
-  return `<main id="conteudo">
-    <section class="hero"><img class="hero-image" src="./images/hero-architecture.webp" alt="Imagem editorial de arquitetura contemporânea." fetchpriority="high"><div class="hero-shade"></div>
-      <div class="hero-content"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>CONSTRUÇÃO COM PROPÓSITO</span><h1>Seu projeto merece uma base <em>extraordinária.</em></h1><p>Da primeira ideia à entrega, cada etapa da sua obra merece planejamento, cuidado e atenção aos detalhes.</p><div class="hero-actions">${routeLink("/contato", "Converse sobre sua obra <span aria-hidden='true'>↗</span>", "button button-primary")}${routeLink("/servicos", "Conheça os serviços <span aria-hidden='true'>↗</span>", "button button-outline-light")}</div><div class="hero-caption"><span>Um parceiro para transformar planos em espaços reais — com clareza em cada etapa.</span><span><b>Construprimer</b><br>Construindo com propósito.</span></div></div>
-      <div class="hero-bottom"><span>↓ &nbsp; CONHEÇA A CONSTRUPRIMER</span><span>CONSTRUÇÃO · REFORMAS · GESTÃO DE OBRAS</span></div>${imageNote}</section>
-    <section class="intro-section section"><div class="section-inner intro-layout"><div class="intro-title"><span class="eyebrow"><span class="eyebrow-line"></span>QUEM SOMOS</span><h2>Construir é mais do que <em>erguer paredes.</em></h2>${routeLink("/empresa", "Conheça a empresa <span aria-hidden='true'>↗</span>", "text-link")}</div><div class="intro-copy"><p><strong>A Construprimer atua em construção civil, reformas e transformação de espaços.</strong> Cada obra começa com uma conversa sobre necessidades, prioridades e objetivos.</p><p>Planejamento, clareza e atenção às etapas orientam o diálogo com cada cliente — da definição do escopo aos próximos passos.</p><div class="company-pillars"><div><span>01</span><b>Planejamento</b><small>Entender o que a obra precisa.</small></div><div><span>02</span><b>Clareza</b><small>Alinhar escopo e prioridades.</small></div><div><span>03</span><b>Acompanhamento</b><small>Combinar etapas e responsabilidades.</small></div></div></div></div></section>
-    <section class="founder-band"><figure class="founder-portrait">${founderPhoto}<figcaption>Flávio · Fundador e CEO da Construprimer</figcaption></figure><div class="founder-copy"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>QUEM CONDUZ</span><h2>Uma obra se faz com técnica. <em>E também com presença.</em></h2><p><strong>Flávio é fundador e CEO da Construprimer.</strong> Para apresentar seu projeto, conte sobre a obra e converse diretamente com a equipe.</p>${routeLink("/fundador", "Conheça o fundador <span aria-hidden='true'>↗</span>", "text-link text-link-light")}</div></section>
-    <section class="services-section section section-cream"><div class="section-inner"><div class="section-heading"><div><span class="eyebrow">O QUE FAZEMOS</span><h2>Para cada desafio,<br><em>um jeito de construir.</em></h2></div><div class="section-heading-side"><p>Construção, reformas, gestão e acabamentos: converse com a equipe para avaliar o escopo do seu projeto.</p>${routeLink("/servicos", "Ver serviços ↗", "text-link")}</div></div><div class="service-grid">${serviceCards()}</div></div></section>
-    <section class="projects-section section"><div class="section-inner"><div class="section-heading"><div><span class="eyebrow">SEU PROJETO</span><h2>Cada obra começa<br><em>com boas decisões.</em></h2></div><div class="section-heading-side"><p>Compartilhe o local, o objetivo e o tipo de serviço. Essas informações ajudam a iniciar uma conversa clara sobre os próximos passos.</p>${routeLink("/projetos", "Organize seu projeto ↗", "text-link")}</div></div><div class="project-start"><article><span>01</span><h3>O que você quer fazer?</h3><p>Construir, reformar, melhorar um ambiente, organizar uma obra ou concluir acabamentos.</p></article><article><span>02</span><h3>Onde será a obra?</h3><p>Informe a cidade e o bairro para contextualizar o projeto na conversa inicial.</p></article><article><span>03</span><h3>Em que etapa está?</h3><p>Conte se está planejando, se já possui projeto ou se a obra está em andamento.</p></article></div></div></section>
+  return `<main id="conteudo" class="home-experience">
+    <section class="hero hero-immersive"><img class="hero-image" src="./images/hero-architecture.webp" alt="Imagem editorial de arquitetura contemporânea." fetchpriority="high"><div class="hero-shade"></div>
+      <div class="hero-orbit" aria-hidden="true"><span>CONSTRUIR</span><i></i><b>COM PROPÓSITO</b></div>
+      <div class="hero-content"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>CONSTRUPRIMER · CONSTRUÇÃO E REFORMAS</span><h1>O espaço que você imagina. <em>O próximo passo começa aqui.</em></h1><p>Construção civil, reformas, gestão de obras e acabamentos — com conversa clara desde o primeiro contato.</p><div class="hero-actions">${routeLink("/contato", "Começar meu projeto <span aria-hidden='true'>↗</span>", "button button-primary")}${routeLink("/servicos", "Explorar serviços <span aria-hidden='true'>↓</span>", "button button-outline-light")}</div>
+      <div class="hero-caption"><span>Planejamento. Clareza. Atenção em cada etapa.</span><span><b>01 / 04</b><br>CONSTRUIR · TRANSFORMAR · RENOVAR</span></div></div>
+      <a class="hero-scroll" href="#experiencia" aria-label="Rolar para conhecer a Construprimer"><span></span>ROLE PARA DESCOBRIR</a>${imageNote}</section>
+    <div class="motion-marquee" aria-label="Construção civil, reformas, gestão de obras e acabamentos"><div><span>CONSTRUÇÃO CIVIL</span><i>✳</i><span>REFORMAS</span><i>✳</i><span>GESTÃO DE OBRAS</span><i>✳</i><span>ACABAMENTOS</span><i>✳</i><span>CONSTRUÇÃO CIVIL</span><i>✳</i><span>REFORMAS</span><i>✳</i><span>GESTÃO DE OBRAS</span><i>✳</i><span>ACABAMENTOS</span><i>✳</i></div></div>
+    <section id="experiencia" class="section intro-section intro-experience"><div class="section-inner intro-layout"><div class="intro-title"><span class="eyebrow"><span class="eyebrow-line"></span>UMA NOVA FORMA DE COMEÇAR</span><h2>Não é só sobre construir. É sobre <em>fazer acontecer.</em></h2><p class="intro-side-note">Cada projeto tem seu contexto. A primeira etapa é entender o que você precisa.</p>${routeLink("/empresa", "Conheça a Construprimer <span aria-hidden='true'>↗</span>", "text-link")}</div><div class="intro-copy"><p><strong>A Construprimer atua em construção civil, reformas e transformação de espaços.</strong> O trabalho começa por uma conversa sobre necessidades, prioridades e objetivos.</p><p>Planejamento, clareza e atenção às etapas orientam o diálogo — da definição do escopo aos próximos passos.</p><div class="company-pillars"><div><span>01</span><b>Planejamento</b><small>Entender o que a obra precisa.</small></div><div><span>02</span><b>Clareza</b><small>Alinhar escopo e prioridades.</small></div><div><span>03</span><b>Acompanhamento</b><small>Combinar etapas e responsabilidades.</small></div></div></div></div></section>
+    <section class="founder-band founder-band-home"><figure class="founder-portrait">${founderPhoto}<figcaption>Flávio · Fundador e CEO da Construprimer</figcaption></figure><div class="founder-copy"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>QUEM CONDUZ</span><h2>Uma obra se faz com técnica. <em>E também com presença.</em></h2><p><strong>Flávio é fundador e CEO da Construprimer.</strong> Para apresentar seu projeto, conte sobre a obra e converse diretamente com a equipe.</p>${routeLink("/fundador", "Conheça o fundador <span aria-hidden='true'>↗</span>", "text-link text-link-light")}</div></section>
+    <section class="services-section section section-cream services-experience"><div class="section-inner"><div class="section-heading"><div><span class="eyebrow">O QUE FAZEMOS</span><h2>Escolha o que precisa.<br><em>A gente conversa sobre como começar.</em></h2></div><div class="section-heading-side"><p>Conheça as frentes de atuação e converse com a equipe para avaliar o escopo do seu projeto.</p>${routeLink("/servicos", "Ver todos os serviços ↗", "text-link")}</div></div><div class="service-grid">${serviceCards()}</div></div></section>
+    <section class="project-builder-section section"><div class="section-inner project-builder-layout"><div class="project-builder-intro"><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>SEU PROJETO COMEÇA AQUI</span><h2>Vamos dar forma à sua <em>ideia?</em></h2><p>Responda algumas perguntas rápidas. No final, você poderá revisar as informações e abrir uma conversa no WhatsApp.</p><div class="builder-progress"><span>BRIEFING INICIAL</span><span>SEM COMPROMISSO · SEM ENVIO AUTOMÁTICO</span></div></div>
+      <form class="project-builder" id="project-builder">
+        <fieldset class="builder-field"><legend><span>01</span> O que você precisa?</legend><div class="builder-options">
+          <label class="builder-option"><input type="radio" name="builder_service" value="Construção civil" required><span class="builder-option-icon">⌂</span><b>Construir</b><small>Uma nova construção</small></label>
+          <label class="builder-option"><input type="radio" name="builder_service" value="Reformas e melhorias"><span class="builder-option-icon">↗</span><b>Reformar</b><small>Transformar um espaço</small></label>
+          <label class="builder-option"><input type="radio" name="builder_service" value="Gestão de obras gerais"><span class="builder-option-icon">▤</span><b>Gerir uma obra</b><small>Organizar etapas</small></label>
+          <label class="builder-option"><input type="radio" name="builder_service" value="Acabamentos"><span class="builder-option-icon">✳</span><b>Acabamentos</b><small>Concluir os detalhes</small></label>
+        </div></fieldset>
+        <div class="builder-fields-row"><label class="builder-input"><span>02 · Onde será a obra?</span><input name="builder_location" type="text" placeholder="Cidade e bairro" autocomplete="address-level2"></label><label class="builder-input"><span>03 · Em que etapa está?</span><select name="builder_stage"><option value="">Selecione uma etapa</option><option>Estou planejando</option><option>Já tenho um projeto</option><option>A obra já começou</option><option>Preciso concluir ou reformar</option></select></label></div>
+        <label class="builder-input builder-message"><span>04 · Conte um pouco mais (opcional)</span><textarea name="builder_notes" rows="3" placeholder="O que você gostaria de construir, reformar ou transformar?"></textarea></label>
+        <div class="builder-submit"><p id="builder-note" aria-live="polite">Suas respostas só serão compartilhadas se você abrir e enviar a mensagem pelo WhatsApp.</p><button class="button button-primary" type="submit">Montar minha mensagem <span aria-hidden="true">↗</span></button></div>
+      </form></div></section>
     <section class="process-section section section-cream"><div class="section-inner process-layout"><div class="process-intro"><span class="eyebrow">COMO TRABALHAMOS</span><h2>Clareza do primeiro contato à execução.</h2><p>Conhecer o projeto, alinhar o escopo e combinar as etapas ajuda a orientar os próximos passos.</p>${routeLink("/processo", "Entenda nosso processo ↗", "text-link")}</div><div class="steps-list">${processSteps()}</div></div></section>
+    <section class="home-visual-cta"><div><span class="eyebrow eyebrow-light">PRONTO PARA COMEÇAR?</span><h2>Uma boa obra começa com uma boa conversa.</h2>${routeLink("/contato", "Fale com a Construprimer <span aria-hidden='true'>↗</span>", "button button-light")}</div><span class="home-visual-mark" aria-hidden="true">C<span>✳</span></span></section>
     ${faqBlock()}
   </main>`;
 }
-
 function pageHero(label, title, intro = "") {
   return `<section class="page-hero"><div class="page-hero-inner"><span class="eyebrow"><span class="eyebrow-line"></span>${label.toUpperCase()}</span><h1>${title}</h1>${intro ? `<p>${intro}</p>` : ""}<div class="page-hero-meta"><span>CONSTRUPRIMER · CONSTRUINDO COM PROPÓSITO</span><span>WHATSAPP · ${formattedWhatsappNumber}</span></div></div></section>`;
 }
@@ -384,6 +398,35 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
   }, { threshold: 0.12 });
   revealTargets.forEach((element) => revealObserver.observe(element));
 }
+
+
+document.querySelector("#project-builder")?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const data = new FormData(form);
+  const service = String(data.get("builder_service") || "").trim();
+  const location = String(data.get("builder_location") || "").trim();
+  const stage = String(data.get("builder_stage") || "").trim();
+  const notes = String(data.get("builder_notes") || "").trim();
+  const note = document.querySelector("#builder-note");
+  if (!service) {
+    if (note) note.textContent = "Escolha primeiro o tipo de serviço para montar sua mensagem.";
+    form.querySelector('input[name="builder_service"]')?.focus();
+    return;
+  }
+  const message = [
+    "Olá! Vim pelo site da Construprimer e gostaria de conversar sobre um projeto.",
+    "",
+    `Serviço: ${service}`,
+    ...(location ? [`Local: ${location}`] : []),
+    ...(stage ? [`Etapa: ${stage}`] : []),
+    ...(notes ? [`Detalhes: ${notes}`] : []),
+    "",
+    "Gostaria de conversar sobre os próximos passos."
+  ].join("\n");
+  if (note) note.textContent = "Sua mensagem está pronta. Revise e envie pelo WhatsApp se desejar.";
+  window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+});
 
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
