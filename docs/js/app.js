@@ -137,7 +137,10 @@ function footer() {
 }
 
 function serviceCards() {
-  return services.map((service) => `<article class="service-card"><span class="service-number">${service.number}<span class="service-rule"></span></span><h3>${service.title}</h3><p>${service.description}</p><small>${service.note}</small></article>`).join("");
+  return services.map((service) => {
+    const message = `Olá! Gostaria de conversar com a Construprimer sobre: ${service.title}.`;
+    return `<article class="service-card service-card-interactive"><span class="service-number">${service.number}<span class="service-rule"></span></span><h3>${service.title}</h3><p>${service.description}</p><small>${service.note}</small><a class="service-card-link" href="https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}" target="_blank" rel="noopener noreferrer">Conversar sobre este serviço <span aria-hidden="true">↗</span></a></article>`;
+  }).join("");
 }
 
 function referenceGallery() {
@@ -194,7 +197,7 @@ function homePage() {
   </main>`;
 }
 function pageHero(label, title, intro = "") {
-  return `<section class="page-hero"><div class="page-hero-inner"><span class="eyebrow"><span class="eyebrow-line"></span>${label.toUpperCase()}</span><h1>${title}</h1>${intro ? `<p>${intro}</p>` : ""}<div class="page-hero-meta"><span>CONSTRUPRIMER · CONSTRUINDO COM PROPÓSITO</span><span>WHATSAPP · ${formattedWhatsappNumber}</span></div></div></section>`;
+  return `<section class="page-hero page-hero-visual"><img class="page-hero-image" src="./images/hero-architecture.webp" alt="" aria-hidden="true" loading="eager"><div class="page-hero-overlay"></div><div class="page-hero-inner"><nav class="page-breadcrumb" aria-label="Você está em"><a href="./">Início</a><span aria-hidden="true">/</span><span>${label}</span></nav><span class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>${label.toUpperCase()} · CONSTRUPRIMER</span><h1>${title}</h1>${intro ? `<p>${intro}</p>` : ""}<div class="page-hero-meta"><span>CONSTRUIR · TRANSFORMAR · RENOVAR</span><a href="https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Olá! Vim pelo site da Construprimer e gostaria de conversar sobre meu projeto.")}" target="_blank" rel="noopener noreferrer">COMECE UMA CONVERSA ↗</a></div></div><span class="page-hero-index" aria-hidden="true">C<span>✳</span></span></section>`;
 }
 
 function companyPage() {
@@ -427,6 +430,20 @@ document.querySelector("#project-builder")?.addEventListener("submit", (event) =
   if (note) note.textContent = "Sua mensagem está pronta. Revise e envie pelo WhatsApp se desejar.";
   window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
 });
+
+
+const scrollProgress = document.createElement("div");
+scrollProgress.className = "scroll-progress";
+scrollProgress.setAttribute("role", "presentation");
+document.body.append(scrollProgress);
+const updateScrollProgress = () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? Math.min(100, Math.max(0, window.scrollY / scrollable * 100)) : 0;
+  scrollProgress.style.setProperty("--scroll-progress", `${progress}%`);
+  document.body.classList.toggle("has-scrolled", window.scrollY > 24);
+};
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+updateScrollProgress();
 
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
