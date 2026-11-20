@@ -132,7 +132,7 @@ function footer() {
   return `<section class="closing-cta"><div class="closing-inner"><span class="eyebrow eyebrow-light">VAMOS CONVERSAR</span><h2>Conte sobre sua obra. Vamos conversar sobre o próximo passo.</h2>${routeLink("/contato", "Fale com a Construprimer <span aria-hidden='true'>↗</span>", "button button-light")}</div><div class="closing-mark" aria-hidden="true">C<span>◆</span></div></section>
     <footer class="site-footer"><div class="footer-main"><div class="footer-brand">${logo()}<p>Construção civil, reformas, gestão de obras e acabamentos.</p><a class="footer-cta" href="https://wa.me/${whatsappNumber}" target="_blank" rel="noopener noreferrer">Converse sobre sua obra ↗</a></div>
       <div class="footer-column"><span class="footer-title">NAVEGAÇÃO</span>${links}</div>
-      <div class="footer-column"><span class="footer-title">CONTATO</span><a href="https://wa.me/${whatsappNumber}" target="_blank" rel="noopener noreferrer">WhatsApp · ${formattedWhatsappNumber}</a><span>Atendimento inicial pelo WhatsApp</span></div>
+      <div class="footer-column"><span class="footer-title">CONTATO</span><a href="https://wa.me/${whatsappNumber}" target="_blank" rel="noopener noreferrer">WhatsApp · ${formattedWhatsappNumber}</a><span>Atendimento inicial pelo WhatsApp</span><a href="./privacidade.html">Política de privacidade</a></div>
     </div><div class="footer-bottom"><span>© 2026 Construprimer</span><span>Construindo com propósito <b>◆</b></span></div></footer>`;
 }
 
