@@ -122,6 +122,7 @@ PRIORITIES = {
     "processo": "0.7",
     "manifesto": "0.5",
     "contato": "0.9",
+    "privacidade": "0.3",
 }
 
 
@@ -214,7 +215,7 @@ def write_sitemap(site_base_url: str, output_dir: Path) -> None:
     ET.register_namespace("", namespace)
     urlset = ET.Element(f"{{{namespace}}}urlset")
     lastmod = date.today().isoformat()
-    for slug in ["", *PAGES.keys()]:
+    for slug in ["", *PAGES.keys(), "privacidade"]:
         url = ET.SubElement(urlset, f"{{{namespace}}}url")
         ET.SubElement(url, f"{{{namespace}}}loc").text = page_url(site_base_url, slug)
         ET.SubElement(url, f"{{{namespace}}}lastmod").text = lastmod
