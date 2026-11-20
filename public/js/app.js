@@ -152,7 +152,7 @@ function referenceGallery() {
     <div class="section-heading"><div><span class="eyebrow">REFERÊNCIAS VISUAIS</span><h2 id="reference-gallery-title">Ideias para <em>cada ambiente.</em></h2></div><div class="section-heading-side"><p>Fotos de ambientes residenciais e etapas de obra para ajudar a visualizar possibilidades.</p></div></div>
     <p class="reference-disclaimer"><strong>Imagens ilustrativas:</strong> as fotografias são de bancos de imagem. Elas não retratam obras executadas, clientes ou integrantes da equipe da Construprimer.</p>
     <div class="reference-grid">${cards}</div>
-    <p class="reference-sources">Licenças das imagens: <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer">Pexels</a> · <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash</a>. As fotografias são de SrikanthLunavath (CC0) e dos acervos EPA e NARA (domínio público nos Estados Unidos).</p>
+    <p class="reference-sources">Licenças: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.pt-br" target="_blank" rel="noopener noreferrer">CC0 1.0</a> e domínio público indicado nos registros dos acervos EPA/NARA. As fotografias são de SrikanthLunavath e dos acervos EPA/NARA.</p>
   </div></section>`;
 }
 
